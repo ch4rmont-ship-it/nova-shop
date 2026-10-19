@@ -1,3 +1,4 @@
+# Trigger registered workflow.
 name: Apply NOVA Mongolia catalog update
 
 on:
