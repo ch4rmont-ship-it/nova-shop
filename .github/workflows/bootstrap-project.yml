@@ -1,3 +1,4 @@
+# Triggered after initial workflow registration.
 name: Bootstrap NOVA Commerce source
 
 on:
