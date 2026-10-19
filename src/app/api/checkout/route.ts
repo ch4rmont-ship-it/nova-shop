@@ -9,7 +9,7 @@ const schema = z.object({
 });
 export async function POST(request:Request){
  const origin=request.headers.get("origin");
- if(origin&&origin!==new URL(request.url).origin)return NextResponse.json({error:"Хүсэлт зөвшөөрөгдөөгүй"},{status:403});
+ if(origin&&new URL(origin).host!==request.headers.get("host")&&origin!==process.env.NEXT_PUBLIC_SITE_URL)return NextResponse.json({error:"Хүсэлт зөвшөөрөгдөөгүй"},{status:403});
  if(!supabaseConfigured())return NextResponse.json({error:"Захиалгын үйлчилгээ түр боломжгүй байна."},{status:503});
  const client=await createClient();const{data:{user}}=await client.auth.getUser();
  if(!user)return NextResponse.json({error:"Захиалга өгөхийн тулд нэвтэрнэ үү."},{status:401});
