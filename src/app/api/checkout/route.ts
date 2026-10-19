@@ -10,7 +10,7 @@ const schema = z.object({
   items: z.array(z.object({ productId: z.string().uuid(), quantity: z.number().int().min(1).max(99) })).min(1).max(100),
   address: z.object({
     fullName: z.string().min(2).max(120), email: z.string().email(), phone: z.string().min(5).max(40), country: z.string().min(2).max(80),
-    city: z.string().min(1).max(100), state: z.string().max(100).default(""), addressLine1: z.string().min(3).max(200), postalCode: z.string().min(2).max(30)
+    city: z.string().min(1).max(100), state: z.string().max(100).default(""), addressLine1: z.string().min(3).max(200), postalCode: z.string().max(30).default("")
   })
 });
 
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     const unit = product.sale_price_cents && product.sale_price_cents < product.price_cents ? product.sale_price_cents : product.price_cents;
     subtotal += unit * item.quantity;
   }
-  const shippingCents = subtotal >= 10000 ? 0 : 1200;
+  const shippingCents = subtotal >= 15000000 ? 0 : 1200000;
 
   let userId: string | null = null;
   try { const supabase = await createClient(); const { data } = await supabase.auth.getUser(); userId = data.user?.id || null; } catch { userId = null; }
@@ -55,9 +55,9 @@ export async function POST(request: Request) {
     const lineItems = parsed.data.items.map((item) => {
       const product = productMap.get(item.productId)!;
       const unit = product.sale_price_cents && product.sale_price_cents < product.price_cents ? product.sale_price_cents : product.price_cents;
-      return { quantity: item.quantity, price_data: { currency: "usd", unit_amount: unit, product_data: { name: product.name, metadata: { product_id: product.id } } } };
+      return { quantity: item.quantity, price_data: { currency: "mnt", unit_amount: unit, product_data: { name: product.name, metadata: { product_id: product.id } } } };
     });
-    if (shippingCents) lineItems.push({ quantity: 1, price_data: { currency: "usd", unit_amount: shippingCents, product_data: { name: "Standard tracked shipping", metadata: { product_id: "shipping" } } } });
+    if (shippingCents) lineItems.push({ quantity: 1, price_data: { currency: "mnt", unit_amount: shippingCents, product_data: { name: "Delivery", metadata: { product_id: "shipping" } } } });
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       customer_email: parsed.data.address.email,

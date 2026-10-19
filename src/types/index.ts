@@ -4,6 +4,7 @@ export type PaymentStatus = "pending" | "paid" | "failed" | "refunded";
 
 export type Category = {
   id: string;
+  brand: string;
   name: string;
   slug: string;
   description: string;

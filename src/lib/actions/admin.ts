@@ -6,7 +6,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { slugify } from "@/lib/utils";
 import { getStripe } from "@/lib/stripe";
 
-function dollarsToCents(value: FormDataEntryValue | null) {
+function moneyToCents(value: FormDataEntryValue | null) {
   const number = Number(value || 0);
   if (!Number.isFinite(number) || number < 0) throw new Error("Invalid price");
   return Math.round(number * 100);
@@ -44,15 +44,21 @@ export async function saveProductAction(formData:FormData){
   const existingId=String(formData.get("id")||"");
   const name=String(formData.get("name")||"").trim();
   if(name.length<2) throw new Error("Product name is required.");
-  const price=dollarsToCents(formData.get("price"));
+  const price=moneyToCents(formData.get("price"));
   const saleRaw=String(formData.get("salePrice")||"").trim();
-  const sale=saleRaw?dollarsToCents(saleRaw):null;
+  const sale=saleRaw?moneyToCents(saleRaw):null;
   if(sale!==null&&sale>=price) throw new Error("Sale price must be lower than the normal price.");
   const payload={
     category_id:String(formData.get("categoryId")||""),name,slug:slugify(String(formData.get("slug")||name)),sku:String(formData.get("sku")||"").trim().toUpperCase(),
     short_description:String(formData.get("shortDescription")||"").trim(),description:String(formData.get("description")||"").trim(),price_cents:price,sale_price_cents:sale,
     stock:Math.max(0,Math.floor(Number(formData.get("stock")||0))),featured:formData.get("featured")==="on",bestseller:formData.get("bestseller")==="on",active:formData.get("active")==="on",
-    specifications:specsFromText(String(formData.get("specifications")||""))
+    specifications:specsFromText(String(formData.get("specifications")||"")),
+    brand:String(formData.get("brand")||"NOVA Select").trim() || "NOVA Select",
+    source_marketplace:String(formData.get("sourceMarketplace")||"").trim() || null,
+    source_title:String(formData.get("sourceTitle")||"").trim() || null,
+    source_url:String(formData.get("sourceUrl")||"").trim() || null,
+    source_cost_cny:formData.get("sourceCostCny") ? Number(formData.get("sourceCostCny")) : null,
+    markup_percent:formData.get("markupPercent") ? Number(formData.get("markupPercent")) : null
   };
   let productId=existingId;
   if(existingId){const{error}=await admin.from("products").update(payload).eq("id",existingId);if(error)throw new Error(error.message);}else{const{data,error}=await admin.from("products").insert(payload).select("id").single();if(error||!data)throw new Error(error?.message||"Could not create product");productId=data.id;}

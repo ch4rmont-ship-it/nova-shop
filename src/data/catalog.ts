@@ -3,568 +3,401 @@ import type { Category, Product } from "@/types";
 export const categories: Category[] = [
   {
     "id": "11111111-1111-4111-8111-111111111111",
-    "name": "Apparel",
-    "slug": "apparel",
-    "description": "Elevated everyday essentials with modern silhouettes.",
-    "imageUrl": "/categories/apparel.svg",
+    "name": "Drive",
+    "slug": "drive",
+    "description": "Машинд өдөр бүр хэрэг болох цэвэрхэн, практик аксессуарууд.",
+    "imageUrl": "/categories/drive.svg",
     "active": true
   },
   {
     "id": "22222222-2222-4222-8222-222222222222",
-    "name": "Footwear",
-    "slug": "footwear",
-    "description": "Comfort-first footwear for city life and weekends.",
-    "imageUrl": "/categories/footwear.svg",
+    "name": "Desk",
+    "slug": "desk",
+    "description": "Ажил, хичээлийн ширээг цэгцтэй, тухтай болгох хэрэгслүүд.",
+    "imageUrl": "/categories/desk.svg",
     "active": true
   },
   {
     "id": "33333333-3333-4333-8333-333333333333",
-    "name": "Tech",
-    "slug": "tech",
-    "description": "Minimal, useful technology for work and home.",
-    "imageUrl": "/categories/tech.svg",
+    "name": "Organize",
+    "slug": "organize",
+    "description": "Гэр, шүүгээ, өдөр тутмын жижиг зүйлсийн ухаалаг эмх цэгц.",
+    "imageUrl": "/categories/organize.svg",
     "active": true
   },
   {
     "id": "44444444-4444-4444-8444-444444444444",
-    "name": "Home",
-    "slug": "home",
-    "description": "Thoughtful objects that make daily spaces feel better.",
-    "imageUrl": "/categories/home.svg",
-    "active": true
-  },
-  {
-    "id": "55555555-5555-4555-8555-555555555555",
-    "name": "Beauty",
-    "slug": "beauty",
-    "description": "Simple routines, refined formulas, calm packaging.",
-    "imageUrl": "/categories/beauty.svg",
+    "name": "Carry",
+    "slug": "carry",
+    "description": "Аялал, сургууль, оффист авч явахад зориулсан хөнгөн organizer.",
+    "imageUrl": "/categories/carry.svg",
     "active": true
   }
 ];
 
 export const products: Product[] = [
-  {
-    "id": "00000000-0000-4000-8000-000000000001",
-    "categoryId": "11111111-1111-4111-8111-111111111111",
-    "name": "Essential Overshirt",
-    "slug": "essential-overshirt",
-    "sku": "NV-APP-001",
-    "shortDescription": "A refined apparel essential designed for everyday use.",
-    "description": "Essential Overshirt is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 8900,
-    "salePriceCents": 6900,
-    "stock": 14,
-    "featured": true,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.8,
-    "reviewCount": 128,
-    "specifications": {
-      "Material": "Organic cotton twill",
-      "Fit": "Relaxed",
-      "Care": "Machine wash cold"
-    },
-    "images": [
-      "/products/essential-overshirt.svg"
-    ],
-    "createdAt": "2026-01-03T09:00:00Z"
+{
+  "id": "00000000-0000-4000-8000-000000000001",
+  "categoryId": "11111111-1111-4111-8111-111111111111",
+  "brand": "NOVA Select",
+  "name": "Magnetic Car Mount",
+  "slug": "magnetic-car-mount",
+  "sku": "NV-DRV-001",
+  "shortDescription": "MagSafe төрлийн утсанд зориулсан жижиг, хүчтэй соронзон машины суурь.",
+  "description": "Өдөр тутмын navigation-д зориулагдсан авсаархан соронзон суурь. Хэвтээ/босоо өнцгийг хурдан өөрчилж, dashboard орчмыг цэвэрхэн харагдуулна.",
+  "priceCents": 2200000,
+  "salePriceCents": null,
+  "stock": 28,
+  "featured": true,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Суурилуулалт": "Dashboard / төв хэсэг",
+    "Тохируулга": "360° эргэлт",
+    "Материал": "ABS + silicone",
+    "Тохиромж": "MagSafe төрлийн утас"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000002",
-    "categoryId": "11111111-1111-4111-8111-111111111111",
-    "name": "Studio Knit Tee",
-    "slug": "studio-knit-tee",
-    "sku": "NV-APP-002",
-    "shortDescription": "A refined apparel essential designed for everyday use.",
-    "description": "Studio Knit Tee is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 4200,
-    "salePriceCents": null,
-    "stock": 28,
-    "featured": false,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.7,
-    "reviewCount": 86,
-    "specifications": {
-      "Material": "Heavyweight cotton",
-      "Fit": "Regular",
-      "Weight": "240 gsm"
-    },
-    "images": [
-      "/products/studio-knit-tee.svg"
-    ],
-    "createdAt": "2026-02-06T09:00:00Z"
+  "images": [
+    "/products/magnetic-car-mount.svg"
+  ],
+  "createdAt": "2026-10-19T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000002",
+  "categoryId": "11111111-1111-4111-8111-111111111111",
+  "brand": "NOVA Select",
+  "name": "Gravity Air-Vent Mount",
+  "slug": "gravity-air-vent-mount",
+  "sku": "NV-DRV-002",
+  "shortDescription": "Утсаа тавихад автоматаар түгжигддэг air-vent суурь.",
+  "description": "Нэг гараар утсаа тавьж, авахад зориулсан gravity locking хийц. Хотын өдөр тутмын зам, navigation хэрэглээнд энгийн бөгөөд тогтвортой сонголт.",
+  "priceCents": 2300000,
+  "salePriceCents": null,
+  "stock": 22,
+  "featured": false,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Суурилуулалт": "Air vent",
+    "Түгжээ": "Gravity auto-lock",
+    "Материал": "Aluminum + silicone",
+    "Хэрэглээ": "Нэг гараар"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000003",
-    "categoryId": "11111111-1111-4111-8111-111111111111",
-    "name": "Transit Trousers",
-    "slug": "transit-trousers",
-    "sku": "NV-APP-003",
-    "shortDescription": "A refined apparel essential designed for everyday use.",
-    "description": "Transit Trousers is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 7600,
-    "salePriceCents": 6400,
-    "stock": 9,
-    "featured": true,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.6,
-    "reviewCount": 64,
-    "specifications": {
-      "Material": "Stretch woven",
-      "Fit": "Tapered",
-      "Pockets": "5"
-    },
-    "images": [
-      "/products/transit-trousers.svg"
-    ],
-    "createdAt": "2026-03-09T09:00:00Z"
+  "images": [
+    "/products/gravity-air-vent-mount.svg"
+  ],
+  "createdAt": "2026-10-18T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000003",
+  "categoryId": "11111111-1111-4111-8111-111111111111",
+  "brand": "NOVA Select",
+  "name": "Foldable Trunk Box 30L",
+  "slug": "foldable-trunk-box-30l",
+  "sku": "NV-DRV-003",
+  "shortDescription": "Хэрэглэхгүй үедээ хавтгай эвхэгддэг 30L машины organizer.",
+  "description": "Ус, цэвэрлэгээний хэрэгсэл, жижиг цүнх, авто аксессуар зэргийг нэг дор эмхлэхэд зориулсан хөнгөн trunk box.",
+  "priceCents": 1800000,
+  "salePriceCents": null,
+  "stock": 18,
+  "featured": true,
+  "bestseller": false,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Багтаамж": "30L орчим",
+    "Хийц": "Эвхэгддэг",
+    "Бариул": "2 талдаа",
+    "Хэрэглээ": "Машин / пикник"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000004",
-    "categoryId": "11111111-1111-4111-8111-111111111111",
-    "name": "Merino Zip Cardigan",
-    "slug": "merino-zip-cardigan",
-    "sku": "NV-APP-004",
-    "shortDescription": "A refined apparel essential designed for everyday use.",
-    "description": "Merino Zip Cardigan is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 11800,
-    "salePriceCents": null,
-    "stock": 7,
-    "featured": false,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.9,
-    "reviewCount": 31,
-    "specifications": {
-      "Material": "Merino blend",
-      "Fit": "Relaxed",
-      "Closure": "Two-way zip"
-    },
-    "images": [
-      "/products/merino-zip-cardigan.svg"
-    ],
-    "createdAt": "2026-04-12T09:00:00Z"
+  "images": [
+    "/products/foldable-trunk-box-30l.svg"
+  ],
+  "createdAt": "2026-10-17T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000004",
+  "categoryId": "11111111-1111-4111-8111-111111111111",
+  "brand": "NOVA Select",
+  "name": "Premium Trunk Organizer 60L",
+  "slug": "premium-trunk-organizer-60l",
+  "sku": "NV-DRV-004",
+  "shortDescription": "Том машин, аялал, кемпингт зориулсан 60L эвхэгддэг organizer.",
+  "description": "Том багтаамжтай, хэрэглээгүй үед эвхэж хадгалах боломжтой. Машины тээшний хэсгийг цэгцлэхээс гадна аяллын үед сав болгон ашиглаж болно.",
+  "priceCents": 8700000,
+  "salePriceCents": null,
+  "stock": 9,
+  "featured": true,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Багтаамж": "60L",
+    "Материал": "Oxford fabric",
+    "Хэмжээ": "60 × 35 × 30 cm орчим",
+    "Хийц": "Эвхэгддэг"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000005",
-    "categoryId": "22222222-2222-4222-8222-222222222222",
-    "name": "City Runner 01",
-    "slug": "city-runner-01",
-    "sku": "NV-FTW-001",
-    "shortDescription": "A refined footwear essential designed for everyday use.",
-    "description": "City Runner 01 is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 12900,
-    "salePriceCents": 10900,
-    "stock": 18,
-    "featured": true,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.9,
-    "reviewCount": 213,
-    "specifications": {
-      "Upper": "Engineered mesh",
-      "Outsole": "Rubber",
-      "Drop": "8 mm"
-    },
-    "images": [
-      "/products/city-runner-01.svg"
-    ],
-    "createdAt": "2026-05-15T09:00:00Z"
+  "images": [
+    "/products/premium-trunk-organizer-60l.svg"
+  ],
+  "createdAt": "2026-10-16T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000005",
+  "categoryId": "22222222-2222-4222-8222-222222222222",
+  "brand": "NOVA Select",
+  "name": "Aluminum Laptop Stand X6",
+  "slug": "aluminum-laptop-stand-x6",
+  "sku": "NV-DSK-001",
+  "shortDescription": "16 инч хүртэлх ноутбукт зориулсан эвхэгддэг aluminum stand.",
+  "description": "Дэлгэцийг нүдний түвшинд ойртуулж, ширээний суултыг сайжруулахад зориулагдсан. Хөнгөн, эвхэгддэг тул сургууль болон оффист авч явахад тохиромжтой.",
+  "priceCents": 2300000,
+  "salePriceCents": null,
+  "stock": 31,
+  "featured": true,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Материал": "Бүхэл aluminum",
+    "Тохиромж": "16 inch хүртэл",
+    "Жин": "~230g",
+    "Хийц": "Foldable / adjustable"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000006",
-    "categoryId": "22222222-2222-4222-8222-222222222222",
-    "name": "Court Minimal",
-    "slug": "court-minimal",
-    "sku": "NV-FTW-002",
-    "shortDescription": "A refined footwear essential designed for everyday use.",
-    "description": "Court Minimal is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 9900,
-    "salePriceCents": null,
-    "stock": 11,
-    "featured": false,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.7,
-    "reviewCount": 144,
-    "specifications": {
-      "Upper": "Leather",
-      "Lining": "Recycled textile",
-      "Sole": "Rubber"
-    },
-    "images": [
-      "/products/court-minimal.svg"
-    ],
-    "createdAt": "2026-06-18T09:00:00Z"
+  "images": [
+    "/products/aluminum-laptop-stand-x6.svg"
+  ],
+  "createdAt": "2026-10-15T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000006",
+  "categoryId": "22222222-2222-4222-8222-222222222222",
+  "brand": "NOVA Select",
+  "name": "Tech Organizer Pouch",
+  "slug": "tech-organizer-pouch",
+  "sku": "NV-DSK-002",
+  "shortDescription": "Cable, charger, mouse, SSD зэргийг нэг дор хадгалах compact pouch.",
+  "description": "Өдөр тутмын tech хэрэгслүүдийг тус тусын тасалгаанд цэгцлэхэд зориулсан жижиг organizer. Оффис, сургууль, аялалд тохиромжтой.",
+  "priceCents": 1500000,
+  "salePriceCents": null,
+  "stock": 36,
+  "featured": true,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Материал": "Oxford fabric",
+    "Хэмжээ": "~165 × 100 × 55 mm",
+    "Дотор": "Олон тасалгаатай",
+    "Хэрэглээ": "Office / travel"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000007",
-    "categoryId": "22222222-2222-4222-8222-222222222222",
-    "name": "Trail Lite",
-    "slug": "trail-lite",
-    "sku": "NV-FTW-003",
-    "shortDescription": "A refined footwear essential designed for everyday use.",
-    "description": "Trail Lite is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 13900,
-    "salePriceCents": 11900,
-    "stock": 6,
-    "featured": true,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.8,
-    "reviewCount": 97,
-    "specifications": {
-      "Upper": "Ripstop mesh",
-      "Grip": "All-terrain",
-      "Weight": "286 g"
-    },
-    "images": [
-      "/products/trail-lite.svg"
-    ],
-    "createdAt": "2026-07-21T09:00:00Z"
+  "images": [
+    "/products/tech-organizer-pouch.svg"
+  ],
+  "createdAt": "2026-10-14T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000007",
+  "categoryId": "22222222-2222-4222-8222-222222222222",
+  "brand": "NOVA Select",
+  "name": "Magnetic Cable Clips · 3 Pack",
+  "slug": "magnetic-cable-clips-3-pack",
+  "sku": "NV-DSK-003",
+  "shortDescription": "Ширээн дээрх charging cable-уудыг нэг хөдөлгөөнөөр тогтоох 3 ширхэг clip.",
+  "description": "Утас, чихэвч, keyboard cable зэрэг ширээн дээр байнга унадаг шугамуудыг тогтоох жижиг magnetic organizer.",
+  "priceCents": 1200000,
+  "salePriceCents": null,
+  "stock": 44,
+  "featured": false,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Тоо": "3 ширхэг",
+    "Төрөл": "Magnetic clip",
+    "Суурь": "Наалттай",
+    "Өнгө": "Charcoal"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000008",
-    "categoryId": "22222222-2222-4222-8222-222222222222",
-    "name": "Softstep Slide",
-    "slug": "softstep-slide",
-    "sku": "NV-FTW-004",
-    "shortDescription": "A refined footwear essential designed for everyday use.",
-    "description": "Softstep Slide is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 4900,
-    "salePriceCents": null,
-    "stock": 22,
-    "featured": false,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.5,
-    "reviewCount": 53,
-    "specifications": {
-      "Upper": "EVA",
-      "Footbed": "Contoured",
-      "Use": "Indoor / outdoor"
-    },
-    "images": [
-      "/products/softstep-slide.svg"
-    ],
-    "createdAt": "2026-08-24T09:00:00Z"
+  "images": [
+    "/products/magnetic-cable-clips.svg"
+  ],
+  "createdAt": "2026-10-13T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000008",
+  "categoryId": "22222222-2222-4222-8222-222222222222",
+  "brand": "NOVA Select",
+  "name": "Large PU Desk Mat",
+  "slug": "large-pu-desk-mat",
+  "sku": "NV-DSK-004",
+  "shortDescription": "Keyboard, mouse, notebook-оо нэг гадаргуун дээр цэгцлэх том PU desk mat.",
+  "description": "Зөөлөн бичих гадаргуу, ус тосны хамгаалалттай том desk mat. Sage, sand, charcoal өнгийн setup-т сайн зохицно.",
+  "priceCents": 6600000,
+  "salePriceCents": null,
+  "stock": 14,
+  "featured": true,
+  "bestseller": false,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Материал": "PU",
+    "Хэмжээ": "60 × 120 cm",
+    "Зузаан": "~2 mm",
+    "Онцлог": "Water-resistant"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000009",
-    "categoryId": "33333333-3333-4333-8333-333333333333",
-    "name": "Arc Wireless Headphones",
-    "slug": "arc-wireless-headphones",
-    "sku": "NV-TEC-001",
-    "shortDescription": "A refined tech essential designed for everyday use.",
-    "description": "Arc Wireless Headphones is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 19900,
-    "salePriceCents": 16900,
-    "stock": 13,
-    "featured": true,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.9,
-    "reviewCount": 308,
-    "specifications": {
-      "Battery": "38 hours",
-      "Charging": "USB-C",
-      "ANC": "Adaptive"
-    },
-    "images": [
-      "/products/arc-wireless-headphones.svg"
-    ],
-    "createdAt": "2026-09-27T09:00:00Z"
+  "images": [
+    "/products/large-pu-desk-mat.svg"
+  ],
+  "createdAt": "2026-10-12T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000009",
+  "categoryId": "33333333-3333-4333-8333-333333333333",
+  "brand": "NOVA Select",
+  "name": "A4 Desktop Drawer · 3 Tier",
+  "slug": "a4-desktop-drawer-3-tier",
+  "sku": "NV-ORG-001",
+  "shortDescription": "Бичиг баримт, косметик, жижиг хэрэгслийг ангилах 3 давхар ширээний drawer.",
+  "description": "A4 хэмжээний зүйлс багтах 3 давхар drawer organizer. Сургууль, гэрийн office, makeup desk дээр ашиглахад тохиромжтой.",
+  "priceCents": 5100000,
+  "salePriceCents": null,
+  "stock": 12,
+  "featured": true,
+  "bestseller": false,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Давхар": "3",
+    "Хэмжээ": "A4 compatible",
+    "Хийц": "Transparent drawer",
+    "Хэрэглээ": "Desk / vanity"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000010",
-    "categoryId": "33333333-3333-4333-8333-333333333333",
-    "name": "Desk Dock Pro",
-    "slug": "desk-dock-pro",
-    "sku": "NV-TEC-002",
-    "shortDescription": "A refined tech essential designed for everyday use.",
-    "description": "Desk Dock Pro is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 14900,
-    "salePriceCents": null,
-    "stock": 8,
-    "featured": false,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.7,
-    "reviewCount": 121,
-    "specifications": {
-      "Ports": "9",
-      "Display": "Dual 4K",
-      "Power": "100W PD"
-    },
-    "images": [
-      "/products/desk-dock-pro.svg"
-    ],
-    "createdAt": "2026-01-03T09:00:00Z"
+  "images": [
+    "/products/a4-desktop-drawer.svg"
+  ],
+  "createdAt": "2026-10-11T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000010",
+  "categoryId": "33333333-3333-4333-8333-333333333333",
+  "brand": "NOVA Select",
+  "name": "Vacuum Storage Set · 9 Pack",
+  "slug": "vacuum-storage-set-9-pack",
+  "sku": "NV-ORG-002",
+  "shortDescription": "Өвлийн куртка, хөнжил, улирлын хувцасны эзлэхүүнийг багасгах 9-piece set.",
+  "description": "Олон хэмжээтэй vacuum bag + гар pump бүхий багц. Монголын улирлын хувцас, хөнжил хадгалалтад практик.",
+  "priceCents": 2000000,
+  "salePriceCents": null,
+  "stock": 24,
+  "featured": true,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Багц": "9 piece",
+    "Шахалт": "Hand pump",
+    "Онцлог": "Water-resistant",
+    "Хэрэглээ": "Seasonal storage"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000011",
-    "categoryId": "33333333-3333-4333-8333-333333333333",
-    "name": "Pocket Power 10K",
-    "slug": "pocket-power-10k",
-    "sku": "NV-TEC-003",
-    "shortDescription": "A refined tech essential designed for everyday use.",
-    "description": "Pocket Power 10K is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 6900,
-    "salePriceCents": 5900,
-    "stock": 31,
-    "featured": false,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.6,
-    "reviewCount": 77,
-    "specifications": {
-      "Capacity": "10,000 mAh",
-      "Output": "30W",
-      "Weight": "184 g"
-    },
-    "images": [
-      "/products/pocket-power-10k.svg"
-    ],
-    "createdAt": "2026-02-06T09:00:00Z"
+  "images": [
+    "/products/vacuum-storage-set.svg"
+  ],
+  "createdAt": "2026-10-10T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000011",
+  "categoryId": "44444444-4444-4444-8444-444444444444",
+  "brand": "NOVA Select",
+  "name": "Travel Organizer · 7 Piece",
+  "slug": "travel-organizer-7-piece",
+  "sku": "NV-CRY-001",
+  "shortDescription": "Хувцас, гутал, жижиг хэрэгслийг тус тусад нь ангилах 7-piece travel set.",
+  "description": "Чемоданы доторх зүйлсийг нэг дор цэгцлэх mesh panel бүхий 7 ширхэг organizer. Оюутан, аялал, бизнес trip-д тохиромжтой.",
+  "priceCents": 3000000,
+  "salePriceCents": null,
+  "stock": 27,
+  "featured": true,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Багц": "7 piece",
+    "Материал": "Fabric + mesh",
+    "Төрөл": "Packing cubes",
+    "Хэрэглээ": "Travel / dorm"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000012",
-    "categoryId": "33333333-3333-4333-8333-333333333333",
-    "name": "Halo Desk Lamp",
-    "slug": "halo-desk-lamp",
-    "sku": "NV-TEC-004",
-    "shortDescription": "A refined tech essential designed for everyday use.",
-    "description": "Halo Desk Lamp is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 11900,
-    "salePriceCents": null,
-    "stock": 10,
-    "featured": true,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.8,
-    "reviewCount": 88,
-    "specifications": {
-      "Brightness": "5 levels",
-      "Temperature": "3 modes",
-      "Charging": "Qi2 wireless"
-    },
-    "images": [
-      "/products/halo-desk-lamp.svg"
-    ],
-    "createdAt": "2026-03-09T09:00:00Z"
+  "images": [
+    "/products/travel-organizer-7-piece.svg"
+  ],
+  "createdAt": "2026-10-19T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000012",
+  "categoryId": "44444444-4444-4444-8444-444444444444",
+  "brand": "NOVA Select",
+  "name": "Compression Travel Bags · 2 Pack",
+  "slug": "compression-travel-bags-2-pack",
+  "sku": "NV-CRY-002",
+  "shortDescription": "Өвлийн зузаан хувцсыг чемоданд илүү бага зай эзлүүлэх 2-piece compression bag.",
+  "description": "Double-zip compression хийцтэй, medium + large 2 ширхэг багц. Ялангуяа өвлийн аялал, урт хугацааны trip-д тохиромжтой.",
+  "priceCents": 2200000,
+  "salePriceCents": null,
+  "stock": 30,
+  "featured": false,
+  "bestseller": true,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Багц": "Medium + Large",
+    "Материал": "Water-resistant fabric",
+    "Шахалт": "Double zipper",
+    "Хэрэглээ": "Winter travel"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000013",
-    "categoryId": "44444444-4444-4444-8444-444444444444",
-    "name": "Stoneware Mug Set",
-    "slug": "stoneware-mug-set",
-    "sku": "NV-HOM-001",
-    "shortDescription": "A refined home essential designed for everyday use.",
-    "description": "Stoneware Mug Set is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 5800,
-    "salePriceCents": null,
-    "stock": 24,
-    "featured": true,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.8,
-    "reviewCount": 102,
-    "specifications": {
-      "Material": "Stoneware",
-      "Pieces": "4",
-      "Dishwasher safe": "Yes"
-    },
-    "images": [
-      "/products/stoneware-mug-set.svg"
-    ],
-    "createdAt": "2026-04-12T09:00:00Z"
+  "images": [
+    "/products/compression-travel-bags.svg"
+  ],
+  "createdAt": "2026-10-18T09:00:00Z"
+},
+{
+  "id": "00000000-0000-4000-8000-000000000013",
+  "categoryId": "44444444-4444-4444-8444-444444444444",
+  "brand": "NOVA Select",
+  "name": "Foldable Carry-On Bag 21L",
+  "slug": "foldable-carry-on-bag-21l",
+  "sku": "NV-CRY-003",
+  "shortDescription": "Чемоданы бариул дээр тогтоодог, эвхэгддэг 21L нэмэлт аяллын цүнх.",
+  "description": "2-3 өдрийн аялал эсвэл нэмэлт carry bag болгон ашиглахад тохиромжтой. Ашиглахгүй үед жижиг болгон эвхэж хадгална.",
+  "priceCents": 1900000,
+  "salePriceCents": null,
+  "stock": 21,
+  "featured": true,
+  "bestseller": false,
+  "active": true,
+  "rating": 0,
+  "reviewCount": 0,
+  "specifications": {
+    "Багтаамж": "21L",
+    "Материал": "210D Oxford",
+    "Онцлог": "Foldable / trolley sleeve",
+    "Хэмжээ": "~44 × 33 × 15 cm"
   },
-  {
-    "id": "00000000-0000-4000-8000-000000000014",
-    "categoryId": "44444444-4444-4444-8444-444444444444",
-    "name": "Linen Throw",
-    "slug": "linen-throw",
-    "sku": "NV-HOM-002",
-    "shortDescription": "A refined home essential designed for everyday use.",
-    "description": "Linen Throw is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 9200,
-    "salePriceCents": 7900,
-    "stock": 5,
-    "featured": false,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.7,
-    "reviewCount": 43,
-    "specifications": {
-      "Material": "Linen cotton",
-      "Size": "130 × 180 cm",
-      "Care": "Gentle wash"
-    },
-    "images": [
-      "/products/linen-throw.svg"
-    ],
-    "createdAt": "2026-05-15T09:00:00Z"
-  },
-  {
-    "id": "00000000-0000-4000-8000-000000000015",
-    "categoryId": "44444444-4444-4444-8444-444444444444",
-    "name": "Scented Candle No. 04",
-    "slug": "scented-candle-no-04",
-    "sku": "NV-HOM-003",
-    "shortDescription": "A refined home essential designed for everyday use.",
-    "description": "Scented Candle No. 04 is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 4600,
-    "salePriceCents": null,
-    "stock": 19,
-    "featured": false,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.9,
-    "reviewCount": 156,
-    "specifications": {
-      "Burn time": "55 hours",
-      "Wax": "Soy blend",
-      "Scent": "Fig / cedar"
-    },
-    "images": [
-      "/products/scented-candle-no-04.svg"
-    ],
-    "createdAt": "2026-06-18T09:00:00Z"
-  },
-  {
-    "id": "00000000-0000-4000-8000-000000000016",
-    "categoryId": "44444444-4444-4444-8444-444444444444",
-    "name": "Modular Tray",
-    "slug": "modular-tray",
-    "sku": "NV-HOM-004",
-    "shortDescription": "A refined home essential designed for everyday use.",
-    "description": "Modular Tray is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 6400,
-    "salePriceCents": null,
-    "stock": 16,
-    "featured": true,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.6,
-    "reviewCount": 49,
-    "specifications": {
-      "Material": "Powder-coated steel",
-      "Size": "30 × 20 cm",
-      "Finish": "Matte"
-    },
-    "images": [
-      "/products/modular-tray.svg"
-    ],
-    "createdAt": "2026-07-21T09:00:00Z"
-  },
-  {
-    "id": "00000000-0000-4000-8000-000000000017",
-    "categoryId": "55555555-5555-4555-8555-555555555555",
-    "name": "Barrier Serum",
-    "slug": "barrier-serum",
-    "sku": "NV-BTY-001",
-    "shortDescription": "A refined beauty essential designed for everyday use.",
-    "description": "Barrier Serum is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 5200,
-    "salePriceCents": 4400,
-    "stock": 27,
-    "featured": true,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.9,
-    "reviewCount": 264,
-    "specifications": {
-      "Size": "30 ml",
-      "Skin type": "All",
-      "Fragrance": "Free"
-    },
-    "images": [
-      "/products/barrier-serum.svg"
-    ],
-    "createdAt": "2026-08-24T09:00:00Z"
-  },
-  {
-    "id": "00000000-0000-4000-8000-000000000018",
-    "categoryId": "55555555-5555-4555-8555-555555555555",
-    "name": "Mineral Daily SPF 40",
-    "slug": "mineral-daily-spf-40",
-    "sku": "NV-BTY-002",
-    "shortDescription": "A refined beauty essential designed for everyday use.",
-    "description": "Mineral Daily SPF 40 is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 3800,
-    "salePriceCents": null,
-    "stock": 34,
-    "featured": false,
-    "bestseller": true,
-    "active": true,
-    "rating": 4.8,
-    "reviewCount": 198,
-    "specifications": {
-      "Size": "50 ml",
-      "Finish": "Natural",
-      "Water resistant": "40 min"
-    },
-    "images": [
-      "/products/mineral-daily-spf-40.svg"
-    ],
-    "createdAt": "2026-09-27T09:00:00Z"
-  },
-  {
-    "id": "00000000-0000-4000-8000-000000000019",
-    "categoryId": "55555555-5555-4555-8555-555555555555",
-    "name": "Cloud Cleanser",
-    "slug": "cloud-cleanser",
-    "sku": "NV-BTY-003",
-    "shortDescription": "A refined beauty essential designed for everyday use.",
-    "description": "Cloud Cleanser is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 3200,
-    "salePriceCents": null,
-    "stock": 40,
-    "featured": false,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.7,
-    "reviewCount": 91,
-    "specifications": {
-      "Size": "150 ml",
-      "Texture": "Gel cream",
-      "Fragrance": "Free"
-    },
-    "images": [
-      "/products/cloud-cleanser.svg"
-    ],
-    "createdAt": "2026-01-03T09:00:00Z"
-  },
-  {
-    "id": "00000000-0000-4000-8000-000000000020",
-    "categoryId": "55555555-5555-4555-8555-555555555555",
-    "name": "Night Recovery Cream",
-    "slug": "night-recovery-cream",
-    "sku": "NV-BTY-004",
-    "shortDescription": "A refined beauty essential designed for everyday use.",
-    "description": "Night Recovery Cream is part of the NOVA core collection: practical, understated, and built around materials and details that feel considered in daily use.",
-    "priceCents": 6200,
-    "salePriceCents": 5400,
-    "stock": 12,
-    "featured": true,
-    "bestseller": false,
-    "active": true,
-    "rating": 4.8,
-    "reviewCount": 73,
-    "specifications": {
-      "Size": "50 ml",
-      "Texture": "Rich cream",
-      "Use": "PM"
-    },
-    "images": [
-      "/products/night-recovery-cream.svg"
-    ],
-    "createdAt": "2026-02-06T09:00:00Z"
-  }
+  "images": [
+    "/products/foldable-carry-on-bag.svg"
+  ],
+  "createdAt": "2026-10-17T09:00:00Z"
+}
 ];
-
-export const productBySlug = (slug: string) => products.find((product) => product.slug === slug);
-export const categoryBySlug = (slug: string) => categories.find((category) => category.slug === slug);

@@ -2,8 +2,8 @@ export function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
-export function formatMoney(cents: number, currency = "USD") {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency }).format(cents / 100);
+export function formatMoney(cents: number, currency = "MNT") {
+  return new Intl.NumberFormat("mn-MN", { style: "currency", currency, maximumFractionDigits: 0 }).format(cents / 100);
 }
 
 export function effectivePrice(priceCents: number, salePriceCents: number | null) {

@@ -266,3 +266,8 @@ With Git integration, feature branches get preview deployments and the productio
 - Stripe webhook signatures and checkout totals are validated.
 - Service-role order functions revoke execution from public/anon/authenticated roles.
 
+
+
+## Mongolia catalog pricing
+
+The storefront is localized to MNT. The initial catalog uses public JD.com reference prices checked on 2026-10-19, converted at approximately 1 CNY = 538.61 MNT and marked up around 35% before rounding to a practical retail price. Supplier reference data is stored in admin-only product columns (`source_marketplace`, `source_title`, `source_url`, `source_cost_cny`, `markup_percent`, `source_checked_at`). These are sourcing references, not a claim that inventory has already been purchased. Freight, customs, packaging and payment fees should be added to landed cost before real purchasing begins.

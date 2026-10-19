@@ -6,10 +6,11 @@ import type { Category, Product } from "@/types";
 function mapCategory(row: Record<string, unknown>): Category {
   return {
     id: String(row.id),
+    brand: String(row.brand || "NOVA Select"),
     name: String(row.name),
     slug: String(row.slug),
     description: String(row.description || ""),
-    imageUrl: String(row.image_url || "/categories/apparel.svg"),
+    imageUrl: String(row.image_url || "/categories/drive.svg"),
     active: Boolean(row.active)
   };
 }
@@ -19,6 +20,7 @@ function mapProduct(row: Record<string, unknown>): Product {
   return {
     id: String(row.id),
     categoryId: String(row.category_id),
+    brand: String(row.brand || "NOVA Select"),
     name: String(row.name),
     slug: String(row.slug),
     sku: String(row.sku),
@@ -33,7 +35,7 @@ function mapProduct(row: Record<string, unknown>): Product {
     rating: Number(row.rating || 0),
     reviewCount: Number(row.review_count || 0),
     specifications: (row.specifications || {}) as Record<string, string>,
-    images: imageRows.length ? imageRows.sort((a,b)=>(Number(Boolean(b.is_primary))-Number(Boolean(a.is_primary))) || Number(a.sort_order)-Number(b.sort_order)).map((i)=>String(i.url)) : ["/products/essential-overshirt.svg"],
+    images: imageRows.length ? imageRows.sort((a,b)=>(Number(Boolean(b.is_primary))-Number(Boolean(a.is_primary))) || Number(a.sort_order)-Number(b.sort_order)).map((i)=>String(i.url)) : ["/products/magnetic-car-mount.svg"],
     createdAt: String(row.created_at || new Date(0).toISOString())
   };
 }
