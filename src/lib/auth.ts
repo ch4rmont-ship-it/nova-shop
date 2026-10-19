@@ -16,6 +16,7 @@ export async function getCurrentProfile() {
   const user = await getCurrentUser();
   if (!user) return null;
   const supabase = await createClient();
+  await supabase.rpc("claim_shop_owner");
   const { data } = await supabase.from("profiles").select("id,full_name,phone,avatar_url,role,created_at").eq("id", user.id).maybeSingle();
   return data ? { ...data, email: user.email || "" } : { id: user.id, full_name: user.user_metadata?.full_name || "", phone: "", avatar_url: null, role: "customer", created_at: user.created_at, email: user.email || "" };
 }
@@ -29,6 +30,7 @@ export async function requireUser() {
 export async function requireAdmin() {
   const user = await requireUser();
   const supabase = await createClient();
+  await supabase.rpc("claim_shop_owner");
   const { data } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle();
   if (data?.role !== "admin") redirect("/account");
   return user;

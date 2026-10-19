@@ -1,0 +1,242 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "categoryId": "11111111-1111-4111-8111-111111111111",
+    "brand": "UGREEN",
+    "name": "Type-C → AUX аудио кабель · 0.5 м",
+    "slug": "ugreen-35057-aux",
+    "sku": "NV-DRI-001",
+    "shortDescription": "Type-C төхөөрөмжийг 3.5 мм AUX оролттой машины хөгжимд холбоно.",
+    "description": "Type-C төхөөрөмжийг 3.5 мм AUX оролттой машины хөгжимд холбоно. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 3400000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Загвар": "35057",
+      "Урт": "0.5 м",
+      "Оролт": "USB Type-C",
+      "Гаралт": "3.5 мм AUX"
+    },
+    "images": [
+      "/products/ugreen-35057-aux-0.jpg",
+      "/products/ugreen-35057-aux-1.jpg"
+    ],
+    "createdAt": "2026-10-19T09:00:00Z",
+    "sourceUrl": "https://item.jd.com/product/ctG0_WQR1w4kYVz126MImA.html"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000002",
+    "categoryId": "11111111-1111-4111-8111-111111111111",
+    "brand": "UGREEN",
+    "name": "Машины ослын хэрэгсэл · 35347",
+    "slug": "ugreen-35347-safety",
+    "sku": "NV-DRI-002",
+    "shortDescription": "Суудлын бүс огтлогчтой машины яаралтай тусламжийн хэрэгсэл. Худалдан авахын өмнө шилний тохиромжийг шалгана уу.",
+    "description": "Суудлын бүс огтлогчтой машины яаралтай тусламжийн хэрэгсэл. Худалдан авахын өмнө шилний тохиромжийг шалгана уу. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 3450000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Загвар": "35347",
+      "Зориулалт": "Машины ослын хэрэгсэл",
+      "Анхаарах": "Бүх төрлийн шилэнд тохирохгүй; үйлдвэрлэгчийн зааврыг дагана."
+    },
+    "images": [
+      "/products/ugreen-35347-safety-0.jpg",
+      "/products/ugreen-35347-safety-1.jpg"
+    ],
+    "createdAt": "2026-10-19T09:00:00Z",
+    "sourceUrl": "https://item.jd.com/product/LkCnyEhDTdoFmYcZ1Yy8qA.html"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000003",
+    "categoryId": "22222222-2222-4222-8222-222222222222",
+    "brand": "UGREEN",
+    "name": "Кабель тогтоогч · 1+1 багц",
+    "slug": "ugreen-70585-clips",
+    "sku": "NV-DES-003",
+    "shortDescription": "Ширээний ирмэгээс унадаг цэнэглэгч, чихэвчний кабелиа нэг дор тогтооно.",
+    "description": "Ширээний ирмэгээс унадаг цэнэглэгч, чихэвчний кабелиа нэг дор тогтооно. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 2100000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Загвар": "70585",
+      "Багц": "1+1",
+      "Суурилуулалт": "Наалттай; өрөмдөхгүй"
+    },
+    "images": [
+      "/products/ugreen-70585-clips-0.jpg",
+      "/products/ugreen-70585-clips-1.jpg"
+    ],
+    "createdAt": "2026-10-19T09:00:00Z",
+    "sourceUrl": "https://item.jd.com/product/VIzRm51mijIc1-m3jsHrtQ.html"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000004",
+    "categoryId": "22222222-2222-4222-8222-222222222222",
+    "brand": "NOVA Select",
+    "name": "Сунгадаг шургуулганы зохион байгуулагч",
+    "slug": "adjustable-drawer-tray",
+    "sku": "NV-DES-004",
+    "shortDescription": "Бичгийн хэрэгсэл, жижиг зүйлсийг шургуулгадаа ангилах сунгадаг хайрцаг.",
+    "description": "Бичгийн хэрэгсэл, жижиг зүйлсийг шургуулгадаа ангилах сунгадаг хайрцаг. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 1650000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Урт": "15.5–23.5 см",
+      "Багц": "Жижиг хэмжээ · 1 ширхэг",
+      "Зориулалт": "Шургуулга / ширээ"
+    },
+    "images": [
+      "/products/adjustable-drawer-tray-0.png",
+      "/products/adjustable-drawer-tray-1.jpg"
+    ],
+    "createdAt": "2026-10-19T09:00:00Z",
+    "sourceUrl": "https://item.jd.com/product/sqL9_XR2jRZH2ZwroXr9MA.html"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000005",
+    "categoryId": "33333333-3333-4333-8333-333333333333",
+    "brand": "NOVA Select",
+    "name": "Ногоон хадгалах сагс · 2 ширхэг",
+    "slug": "green-storage-baskets",
+    "sku": "NV-ORG-005",
+    "shortDescription": "Ном, жижиг хэрэгсэл, ахуйн зүйлсээ ангилж хадгалах өндөр ногоон сагсны хос.",
+    "description": "Ном, жижиг хэрэгсэл, ахуйн зүйлсээ ангилж хадгалах өндөр ногоон сагсны хос. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 3300000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Өнгө": "Ногоон",
+      "Багц": "Өндөр, том · 2 ширхэг",
+      "Зориулалт": "Гэр / ширээний хадгалалт"
+    },
+    "images": [
+      "/products/green-storage-baskets-0.png",
+      "/products/green-storage-baskets-1.jpg"
+    ],
+    "createdAt": "2026-10-19T09:00:00Z",
+    "sourceUrl": "https://item.jd.com/product/W98Lf_mkdqDpSzNO82Gz8Q.html"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000006",
+    "categoryId": "33333333-3333-4333-8333-333333333333",
+    "brand": "UGREEN",
+    "name": "Кабель боогч · 3 ширхэг",
+    "slug": "ugreen-45608-ties",
+    "sku": "NV-ORG-006",
+    "shortDescription": "Цэнэглэгч, чихэвчний кабелиа ороож цэгцлэх дахин ашиглах боогч.",
+    "description": "Цэнэглэгч, чихэвчний кабелиа ороож цэгцлэх дахин ашиглах боогч. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 1400000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Загвар": "45608",
+      "Өнгө": "Цайвар шаргал",
+      "Багц": "3 ширхэг"
+    },
+    "images": [
+      "/products/ugreen-45608-ties-0.jpg",
+      "/products/ugreen-45608-ties-1.jpg"
+    ],
+    "createdAt": "2026-10-19T09:00:00Z",
+    "sourceUrl": "https://item.jd.com/product/EHuH9XLlFSQCodB4_H24CQ.html"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000007",
+    "categoryId": "44444444-4444-4444-8444-444444444444",
+    "brand": "Banzheni",
+    "name": "Дижитал хэрэгслийн аяллын цүнх",
+    "slug": "banzheni-tech-pouch",
+    "sku": "NV-CAR-007",
+    "shortDescription": "Цэнэглэгч, кабель, жижиг дижитал хэрэгслээ аялал болон өдөр тутамдаа нэг дор авч яваарай.",
+    "description": "Цэнэглэгч, кабель, жижиг дижитал хэрэгслээ аялал болон өдөр тутамдаа нэг дор авч яваарай. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 2450000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Зориулалт": "Кабель / цэнэглэгч / жижиг хэрэгсэл",
+      "Хийц": "Цахилгаантай зөөврийн цүнх"
+    },
+    "images": [
+      "/products/banzheni-tech-pouch-0.jpg",
+      "/products/banzheni-tech-pouch-1.jpg"
+    ],
+    "createdAt": "2026-10-19T09:00:00Z",
+    "sourceUrl": "https://item.jd.com/product/jxtd_V-1H7iHqbsEJzj5vA.html"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000008",
+    "categoryId": "44444444-4444-4444-8444-444444444444",
+    "brand": "Banzheni",
+    "name": "Хөнгөн цагаан ачааны шошго",
+    "slug": "banzheni-luggage-tag",
+    "sku": "NV-CAR-008",
+    "shortDescription": "Чемоданаа танихад туслах онгоцны дүрстэй мөнгөлөг металл шошго. Мэдээлэл бичих цаастай.",
+    "description": "Чемоданаа танихад туслах онгоцны дүрстэй мөнгөлөг металл шошго. Мэдээлэл бичих цаастай. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 1650000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Хэмжээ": "75 × 45 × 1 мм",
+      "Материал": "Хөнгөн цагаан / ган цагираг",
+      "Өнгө": "Мөнгөлөг"
+    },
+    "images": [
+      "/products/banzheni-luggage-tag-0.jpg",
+      "/products/banzheni-luggage-tag-1.jpg"
+    ],
+    "createdAt": "2026-10-19T09:00:00Z",
+    "sourceUrl": "https://item.jd.com/product/hasjNiCKOO-eZsRQVwsYtA.html"
+  }
+]

@@ -1,3 +1,4 @@
+import { unstable_rethrow } from "next/navigation";
 import { categories as seedCategories, products as seedProducts } from "@/data/catalog";
 import { supabaseConfigured } from "@/lib/env";
 import { createClient } from "@/lib/supabase/server";
@@ -6,7 +7,6 @@ import type { Category, Product } from "@/types";
 function mapCategory(row: Record<string, unknown>): Category {
   return {
     id: String(row.id),
-    brand: String(row.brand || "NOVA Select"),
     name: String(row.name),
     slug: String(row.slug),
     description: String(row.description || ""),
@@ -29,6 +29,8 @@ function mapProduct(row: Record<string, unknown>): Product {
     priceCents: Number(row.price_cents),
     salePriceCents: row.sale_price_cents == null ? null : Number(row.sale_price_cents),
     stock: Number(row.stock),
+    preorder: Boolean(row.preorder),
+    sourceUrl: row.source_public_url ? String(row.source_public_url) : undefined,
     featured: Boolean(row.featured),
     bestseller: Boolean(row.bestseller),
     active: Boolean(row.active),
@@ -45,9 +47,9 @@ export async function getCategories(): Promise<Category[]> {
   try {
     const supabase = await createClient();
     const { data, error } = await supabase.from("categories").select("*").eq("active", true).order("name");
-    if (error || !data?.length) return seedCategories;
-    return data.map((row) => mapCategory(row as Record<string, unknown>));
-  } catch { return seedCategories; }
+    if (error) throw new Error(error.message);
+    return (data || []).map((row) => mapCategory(row as Record<string, unknown>));
+  } catch (error) { unstable_rethrow(error); console.error("NOVA catalog categories failed", error); return []; }
 }
 
 export async function getProducts(): Promise<Product[]> {
@@ -59,9 +61,9 @@ export async function getProducts(): Promise<Product[]> {
       .select("*, product_images(id,url,sort_order,is_primary)")
       .eq("active", true)
       .order("created_at", { ascending: false });
-    if (error || !data?.length) return seedProducts;
-    return data.map((row) => mapProduct(row as unknown as Record<string, unknown>));
-  } catch { return seedProducts; }
+    if (error) throw new Error(error.message);
+    return (data || []).map((row) => mapProduct(row as unknown as Record<string, unknown>));
+  } catch (error) { unstable_rethrow(error); console.error("NOVA catalog products failed", error); return []; }
 }
 
 export async function getProductBySlug(slug: string) {

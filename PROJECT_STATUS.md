@@ -1,33 +1,31 @@
-# NOVA Project Status
+# NOVA implementation and verification
+
+2026-10-19. Dedicated database: `gskzwsbootemeibfhltp`. LinguaFlow was not modified.
 
 ## Implemented
-- Next.js App Router + TypeScript + Tailwind 4 application shell
-- Premium responsive storefront, categories, search/filter/sort, product detail/gallery/reviews
-- Guest + authenticated cart and favorites synchronization
-- Supabase SSR auth, account/profile/addresses/orders, protected admin role
-- Supabase PostgreSQL schema, RLS, Storage policies, migrations and 5-category/20-product seed catalog
-- Atomic order creation and stock reservation/release/refund RPCs
-- Stripe Checkout session endpoint, signed webhook handling, payment total verification and refund integration
-- Admin dashboard, product/category/order/user management, multi-image uploads
-- SEO metadata, sitemap, robots, not-found/error/loading states
-- Vercel-ready configuration and environment template
+- Build/type mismatch fixed; Node 24 pinned and npm lockfile committed.
+- Mongolian responsive storefront and all four requested categories.
+- Eight exact JD listings, 16 downloaded real product photographs and source records.
+- Costed prices include estimated domestic freight, international freight, handling and other-cost reserve, then 35% markup with 500 MNT rounding.
+- Product details, search/filter, favorites, durable cart, authenticated COD checkout.
+- Customer account, addresses and orders; RLS-protected admin, products, images, categories, sourcing costs, order states and stock.
+- Explicit preorders: physical stock remains zero until verified inventory is entered.
+- Private, authenticated atomic order creation with duplicate-line aggregation and idempotency.
+- Only actual stock reservations are restored on cancellation.
+- Owner admin access bound to the connected GitHub email, verified through Supabase Auth.
 
-## Verification performed in this workspace
-- TypeScript/TSX syntax parsing: 76 files checked, 0 syntax errors
-- TODO/FIXME/debug console scan: clean
-- hardcoded secret scan: clean
-- package.json/config files inspected
+## Verified
+- npm run lint: PASS, zero errors or warnings.
+- npm run typecheck: PASS.
+- npm run build: PASS (Next.js 16.4.2).
+- Supabase security advisor: no findings.
+- tests/commerce.sql: PASS (ownership, RLS, idempotency, overselling, cancellation, preorders; fixtures rolled back).
+- Direct Auth API: confirmed test user password sign-in PASS; catalog 8 products; customer sourcing rows hidden.
 
-## Environment limitation
-This execution environment could not reach the npm registry reliably, so `npm install` timed out and dependencies could not be installed here. Therefore a dependency-backed `npm run lint`, `npm run typecheck`, and `npm run build` could not be completed in this workspace. This is an environment/network blocker, not a claimed successful production build.
+## Pending external setup
+- Online payment provider/merchant credentials: not supplied; active checkout is unpaid cash on delivery.
+- Supabase Auth production Site URL/redirect settings and real-mailbox signup/recovery delivery require dashboard configuration/verification. Exposed connector cannot edit those settings.
+- Taobao listing verification was unavailable; no invented Taobao prices used.
+- Lead times, packed weights, freight quotations and other-cost reserve must be confirmed with suppliers/carrier.
 
-Run locally after extracting:
-
-```bash
-npm install
-npm run lint
-npm run typecheck
-npm run build
-```
-
-Then follow README.md for Supabase migrations, environment variables, Stripe webhook setup, initial admin role, and Vercel deployment.
+See README.md for the exact deployment target and setup instructions.

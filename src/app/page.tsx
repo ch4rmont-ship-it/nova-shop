@@ -1,42 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, PackageCheck, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, PackageCheck, Wallet, Truck } from "lucide-react";
 import { ProductGrid } from "@/components/product/product-grid";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { getCategories, getProducts } from "@/lib/data/catalog";
+import { formatMoney } from "@/lib/utils";
 
-export default async function HomePage() {
-  const [categories, products] = await Promise.all([getCategories(), getProducts()]);
-  const featured = products.filter((p)=>p.featured).slice(0,8);
-  const best = products.filter((p)=>p.bestseller).slice(0,4);
-  const newest = [...products].sort((a,b)=>+new Date(b.createdAt)-+new Date(a.createdAt)).slice(0,4);
-  return <>
-    <section className="container-shell py-6 sm:py-10">
-      <div className="relative min-h-[560px] overflow-hidden rounded-[34px] bg-[#dfe8e2] p-6 sm:p-10 lg:p-14">
-        <div className="relative z-10 flex min-h-[470px] max-w-2xl flex-col justify-end">
-          <p className="eyebrow mb-4">NOVA · Everyday essentials</p>
-          <h1 className="max-w-3xl text-5xl font-black leading-[.9] tracking-[-.055em] sm:text-7xl lg:text-[92px]">Өдөр бүр хэрэгтэй.<br/>Илүү цэгцтэй.</h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-[#36433b]">Машин, ширээ, гэр, аялалд зориулсан practical бараануудыг Хятадын том marketplace-уудын бодит reference үнээс сонгон curated байдлаар орууллаа.</p>
-          <div className="mt-7 flex flex-wrap gap-3"><Link className="btn-primary" href="/shop">Бараа үзэх <ArrowRight size={17}/></Link><Link className="btn-secondary bg-white/70" href="#categories">Ангиллаар үзэх</Link></div>
-        </div>
-        <div className="pointer-events-none absolute -right-24 -top-24 size-[440px] rounded-full border-[84px] border-[#214f3c]/10 sm:size-[600px]"/>
-        <div className="pointer-events-none absolute right-[8%] top-[18%] hidden h-80 w-56 rotate-6 rounded-[44px] bg-[#214f3c]/15 lg:block"/>
-        <div className="pointer-events-none absolute right-[27%] top-[28%] hidden size-28 -rotate-6 rounded-[28px] bg-white/45 lg:block"/>
-      </div>
-    </section>
-
-    <section id="categories" className="container-shell py-12">
-      <SectionHeading eyebrow="Ангилал" title="Өдөр тутмын хэрэгцээгээр" href="/shop"/>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{categories.map((category)=><Link key={category.id} href={`/category/${category.slug}`} className="group overflow-hidden rounded-[24px] border border-[#dedbd3] bg-white shadow-[0_12px_35px_rgba(25,31,27,.04)]"><div className="relative aspect-[4/3]"><Image src={category.imageUrl} fill alt={category.name} className="object-cover transition duration-500 group-hover:scale-[1.03]"/></div><div className="p-5"><div className="text-lg font-black tracking-tight">{category.name.toUpperCase()}</div><p className="mt-2 text-xs leading-5 text-[#6d716b]">{category.description}</p></div></Link>)}</div>
-    </section>
-
-    <section className="container-shell py-12"><SectionHeading eyebrow="NOVA pick" title="Онцлох бараанууд" href="/shop"/><ProductGrid products={featured}/></section>
-
-    <section className="container-shell py-12"><div className="overflow-hidden rounded-[32px] bg-[#171816] px-6 py-12 text-white sm:px-10 lg:px-14"><div className="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:items-end"><div><p className="eyebrow !text-white/50">Яагаад NOVA?</p><h2 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">Үнэ нь ойлгомжтой. Сонголт нь цөөн. Хэрэглээ нь бодит.</h2><p className="mt-4 max-w-xl text-sm leading-6 text-white/60">Marketplace reference үнэ, source record, stock болон order history-г admin талаас хянадаг бүтэцтэй. Demo review, хиймэл хямдрал ашиглахгүй.</p></div><div className="grid gap-3 text-sm text-white/75"><div className="flex items-center gap-3"><BadgeCheck size={18}/> Source мэдээлэл admin-д хадгалагдана</div><div className="flex items-center gap-3"><PackageCheck size={18}/> Stock checkout дээр дахин шалгагдана</div><div className="flex items-center gap-3"><ShieldCheck size={18}/> Үнэ client-ээс биш server-ээс баталгаажна</div></div></div></div></section>
-
-    <section className="container-shell py-12"><SectionHeading eyebrow="Шинэ" title="Сүүлд нэмэгдсэн" href="/shop"/><ProductGrid products={newest}/></section>
-    <section className="container-shell py-12"><SectionHeading eyebrow="Хит" title="Эхний collection" href="/shop?sort=popular"/><ProductGrid products={best}/></section>
-
-    <section className="container-shell py-10"><div className="grid gap-4 md:grid-cols-3">{[[Truck,"Хүргэлт","₮150,000-аас дээш захиалгад хүргэлт үнэгүй."],[PackageCheck,"Бодит stock","Checkout эхлэхэд үлдэгдлийг server/database түвшинд дахин шалгана."],[ShieldCheck,"Аюулгүй төлбөр","Payment key холбогдсоны дараа төлбөр зөвхөн server талд үүснэ."]].map(([Icon,title,body])=>{const I=Icon as typeof Truck;return <div key={String(title)} className="surface p-6"><I size={22}/><h3 className="mt-5 font-bold">{String(title)}</h3><p className="muted mt-2 text-sm leading-6">{String(body)}</p></div>})}</div></section>
-  </>;
+export default async function HomePage(){
+ const[categories,products]=await Promise.all([getCategories(),getProducts()]);
+ const picks=[products.find(p=>p.slug==="banzheni-tech-pouch"),products.find(p=>p.slug==="ugreen-45608-ties")].filter(p=>p!==undefined);
+ return <>
+  <section className="container-shell py-5 sm:py-8"><div className="relative overflow-hidden rounded-[28px] bg-[#dfe8e2] p-6 sm:p-10 lg:p-14"><div className="grid items-center gap-9 lg:grid-cols-[1.05fr_1fr]">
+   <div className="relative z-10"><p className="eyebrow mb-6">NOVA / Өдөр тутмын сонголт</p><h1 className="max-w-2xl text-[48px] font-black leading-[1.02] tracking-[-.05em] sm:text-7xl lg:text-[84px]">Жижиг зүйлс.<br/>Том өөрчлөлт.</h1><p className="mt-6 max-w-md text-base leading-7 text-[#36433b]">Илүү цэгцтэй ширээ. Илүү тухтай зам. Илүү хөнгөн аялал. Өдөр бүр хэрэг болох зүйлсээ эндээс олоорой.</p><div className="mt-8 flex flex-wrap gap-3"><Link className="btn-primary" href="/shop">Бараа үзэх <ArrowRight size={17}/></Link><Link className="btn-secondary bg-white/60" href="#categories">Ангилал сонгох</Link></div><div className="mt-9 flex gap-5 border-t border-[#1f4d3a]/15 pt-5 text-xs font-semibold text-[#36433b]"><span>01 / Хэрэгцээтэй</span><span>02 / Цэгцтэй</span><span>03 / Энгийн</span></div></div>
+   <div className="grid grid-cols-2 items-center gap-3 sm:gap-5">{picks.map((p,i)=><Link key={p.id} href={`/product/${p.slug}`} className={`group overflow-hidden rounded-[24px] bg-[#fafbf8] p-3 shadow-[0_20px_70px_rgba(20,45,30,.08)] sm:p-5 ${i?"mt-10 rotate-3":"-rotate-3"}`}><div className="relative aspect-[4/5]"><Image src={p.images[0]} alt={p.name} fill priority className="object-contain transition group-hover:scale-105" sizes="(max-width:1024px) 40vw,22vw"/></div><div className="border-t border-[#dedbd3] pt-3"><p className="text-[10px] font-bold uppercase tracking-widest text-[#6d716b]">{p.brand}</p><p className="mt-1 text-xs font-bold sm:text-sm">{p.name}</p><p className="mt-2 text-sm font-black">{formatMoney(p.priceCents)}</p></div></Link>)}</div>
+  </div></div></section>
+  <section id="categories" className="container-shell py-10 sm:py-14"><SectionHeading eyebrow="Таны өдөр тутам" title="Хэрэгцээгээрээ сонгоорой" href="/shop"/><div className="grid grid-cols-2 gap-3 lg:grid-cols-4 sm:gap-5">{categories.map((c,i)=><Link href={`/category/${c.slug}`} key={c.id} className="group overflow-hidden rounded-[22px] border border-[#dedbd3] bg-white"><div className="relative aspect-[4/3] overflow-hidden"><Image src={c.imageUrl} alt={c.name} fill className="object-contain p-4 transition duration-500 group-hover:scale-105" sizes="(max-width:1024px) 45vw,23vw"/></div><div className="border-t border-[#dedbd3] p-4 sm:p-5"><div className="flex justify-between text-lg font-black"><span>{c.name.toUpperCase()}</span><span className="text-xs text-[#6d716b]">0{i+1}</span></div><p className="mt-2 text-xs leading-5 text-[#6d716b]">{c.description}</p></div></Link>)}</div></section>
+  <section className="container-shell py-10 sm:py-14"><SectionHeading eyebrow="NOVA сонголт" title="Өдөр тутамд хэрэг болох" href="/shop"/><ProductGrid products={products.slice(0,8)}/></section>
+  <section className="container-shell py-12"><div className="grid gap-8 rounded-[28px] bg-[#1c3328] px-6 py-10 text-white sm:px-10 lg:grid-cols-[1.3fr_1fr] lg:p-14"><div><p className="text-xs font-bold uppercase tracking-[.2em] text-[#becfbd]">Бага зүйл. Илүү зай.</p><h2 className="mt-5 max-w-xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl">Өөрийн орон зайг<br/>өөртөө зориул.</h2><Link className="mt-8 inline-flex items-center gap-3 border-b border-white/40 pb-2 text-sm font-bold" href="/category/organize">Эмх цэгцээс эхэлье <ArrowRight size={16}/></Link></div><div className="grid gap-5 self-center">{[[Truck,"Хүргэлт","Монгол даяар 12,000₮. 150,000₮-өөс дээш үнэгүй."],[PackageCheck,"Захиалгаар нийлүүлнэ","Урьдчилсан хугацаа 10–21 хоног. Захиалгыг хүлээн авч, хугацааг батална."],[Wallet,"Хүлээн авахдаа төлөх","Захиалга өгөхөд картын мэдээлэл шаардахгүй."]].map(([Icon,title,body])=>{const I=Icon as typeof Truck;return <div className="flex gap-4" key={String(title)}><I className="mt-1 shrink-0 text-[#becfbd]" size={22}/><div><h3 className="font-bold">{String(title)}</h3><p className="mt-1 text-sm leading-6 text-white/70">{String(body)}</p></div></div>})}</div></div></section>
+ </>;
 }

@@ -4,7 +4,6 @@ export type PaymentStatus = "pending" | "paid" | "failed" | "refunded";
 
 export type Category = {
   id: string;
-  brand: string;
   name: string;
   slug: string;
   description: string;
@@ -15,6 +14,7 @@ export type Category = {
 export type Product = {
   id: string;
   categoryId: string;
+  brand: string;
   name: string;
   slug: string;
   sku: string;
@@ -23,6 +23,8 @@ export type Product = {
   priceCents: number;
   salePriceCents: number | null;
   stock: number;
+  preorder: boolean;
+  sourceUrl?: string;
   featured: boolean;
   bestseller: boolean;
   active: boolean;

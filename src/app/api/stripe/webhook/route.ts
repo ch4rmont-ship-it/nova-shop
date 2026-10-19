@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { createServiceClient } from "@/lib/supabase/admin";
 import { getStripe } from "@/lib/stripe";
 
 export async function POST(request: Request) {
@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   let event: Stripe.Event;
   try { event = getStripe().webhooks.constructEvent(body, signature, secret); }
   catch { return NextResponse.json({ error: "Invalid Stripe signature" }, { status: 400 }); }
-  const admin = createAdminClient();
+  const admin = createServiceClient();
 
   if (event.type === "checkout.session.completed" || event.type === "checkout.session.async_payment_succeeded") {
     const session = event.data.object as Stripe.Checkout.Session;
