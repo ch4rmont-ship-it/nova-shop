@@ -1,4 +1,4 @@
-# Triggered after initial workflow registration.
+# Trigger retry after payload integrity repair.
 name: Bootstrap NOVA Commerce source
 
 on:
