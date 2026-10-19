@@ -1,0 +1,4 @@
+import type { MetadataRoute } from "next";
+import { getCategories, getProducts } from "@/lib/data/catalog";
+import { safeSiteUrl } from "@/lib/utils";
+export default async function sitemap():Promise<MetadataRoute.Sitemap>{const base=safeSiteUrl();const[products,categories]=await Promise.all([getProducts(),getCategories()]);return [{url:base,lastModified:new Date(),changeFrequency:"weekly",priority:1},{url:`${base}/shop`,lastModified:new Date(),changeFrequency:"daily",priority:.9},{url:`${base}/search`,lastModified:new Date(),changeFrequency:"weekly",priority:.5},...categories.map(c=>({url:`${base}/category/${c.slug}`,lastModified:new Date(),changeFrequency:"weekly" as const,priority:.7})),...products.map(p=>({url:`${base}/product/${p.slug}`,lastModified:new Date(p.createdAt),changeFrequency:"weekly" as const,priority:.8}))];}

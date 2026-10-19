@@ -1,0 +1,2 @@
+"use client";
+export default function GlobalError({reset}:{error:Error&{digest?:string};reset:()=>void}){return <section className="container-shell py-24"><div className="surface mx-auto max-w-2xl p-10 text-center"><p className="eyebrow">Something went wrong</p><h1 className="mt-3 text-3xl font-black">We couldn’t load this page.</h1><p className="muted mt-3">Try again. If the issue continues, check the Supabase and Stripe environment settings.</p><button onClick={reset} className="btn-primary mt-7">Try again</button></div></section>}

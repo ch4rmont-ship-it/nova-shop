@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <section className="container-shell py-24"><div className="surface mx-auto max-w-2xl p-10 text-center"><p className="eyebrow">404</p><h1 className="mt-3 text-4xl font-black">That page isn’t here.</h1><p className="muted mt-3">The link may be old, or the item may no longer be available.</p><Link href="/shop" className="btn-primary mt-7">Browse the shop</Link></div></section>}

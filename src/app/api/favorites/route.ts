@@ -1,0 +1,9 @@
+import { NextResponse } from "next/server";
+import { z } from "zod";
+import { supabaseConfigured } from "@/lib/env";
+import { createClient } from "@/lib/supabase/server";
+const schema=z.object({productId:z.string().uuid()});
+async function auth(){if(!supabaseConfigured())return null;const supabase=await createClient();const{data}=await supabase.auth.getUser();return data.user?{supabase,user:data.user}:null;}
+export async function GET(){const a=await auth();if(!a)return NextResponse.json({error:"Not authenticated"},{status:401});const{data,error}=await a.supabase.from("favorites").select("product_id").eq("user_id",a.user.id);if(error)return NextResponse.json({error:error.message},{status:400});return NextResponse.json({productIds:(data||[]).map(r=>r.product_id)});}
+export async function POST(request:Request){const a=await auth();if(!a)return NextResponse.json({error:"Not authenticated"},{status:401});const p=schema.safeParse(await request.json().catch(()=>null));if(!p.success)return NextResponse.json({error:"Invalid product"},{status:400});const{error}=await a.supabase.from("favorites").upsert({user_id:a.user.id,product_id:p.data.productId},{onConflict:"user_id,product_id"});if(error)return NextResponse.json({error:error.message},{status:400});return NextResponse.json({ok:true});}
+export async function DELETE(request:Request){const a=await auth();if(!a)return NextResponse.json({error:"Not authenticated"},{status:401});const p=schema.safeParse(await request.json().catch(()=>null));if(!p.success)return NextResponse.json({error:"Invalid product"},{status:400});const{error}=await a.supabase.from("favorites").delete().eq("user_id",a.user.id).eq("product_id",p.data.productId);if(error)return NextResponse.json({error:error.message},{status:400});return NextResponse.json({ok:true});}

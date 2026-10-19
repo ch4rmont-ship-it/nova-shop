@@ -1,0 +1,17 @@
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { Minus, Plus, Trash2 } from "lucide-react";
+import { useStore } from "@/components/store-provider";
+import { effectivePrice, formatMoney } from "@/lib/utils";
+import type { Product } from "@/types";
+
+export function CartPageClient({ products }: { products: Product[] }) {
+  const { cart, setQuantity, removeFromCart, clearCart } = useStore();
+  const lines = cart.map((line)=>({ ...line, product: products.find((p)=>p.id===line.productId) })).filter((line): line is typeof line & {product:Product}=>Boolean(line.product));
+  const subtotal=lines.reduce((s,l)=>s+effectivePrice(l.product.priceCents,l.product.salePriceCents)*l.quantity,0);
+  const shipping=subtotal>=10000||subtotal===0?0:1200;
+  const total=subtotal+shipping;
+  if(!lines.length) return <div className="surface mx-auto max-w-2xl p-12 text-center"><h1 className="text-3xl font-black">Your cart is empty</h1><p className="muted mt-3">Add a few considered essentials and they’ll appear here.</p><Link href="/shop" className="btn-primary mt-6">Browse the shop</Link></div>;
+  return <div className="grid gap-8 lg:grid-cols-[1fr_380px]"><div><div className="mb-5 flex items-center justify-between"><h1 className="text-4xl font-black">Cart</h1><button className="text-sm font-bold underline" onClick={clearCart}>Clear cart</button></div><div className="space-y-3">{lines.map(({product,quantity})=><div key={product.id} className="surface flex gap-4 p-3 sm:p-4"><Link href={`/product/${product.slug}`} className="relative size-28 shrink-0 overflow-hidden rounded-2xl bg-white sm:size-36"><Image src={product.images[0]} fill alt={product.name} className="object-cover"/></Link><div className="flex min-w-0 flex-1 flex-col justify-between py-1"><div><div className="flex justify-between gap-3"><div><Link href={`/product/${product.slug}`} className="font-bold hover:underline">{product.name}</Link><p className="muted mt-1 text-xs">{product.sku}</p></div><button aria-label="Remove item" onClick={()=>removeFromCart(product.id)}><Trash2 size={17}/></button></div></div><div className="flex items-end justify-between gap-2"><div className="flex items-center rounded-full border border-[#dedbd3] bg-white"><button aria-label="Decrease" className="p-2.5" onClick={()=>setQuantity(product.id,quantity-1)}><Minus size={14}/></button><span className="min-w-8 text-center text-sm font-bold">{quantity}</span><button aria-label="Increase" className="p-2.5" onClick={()=>setQuantity(product.id,Math.min(product.stock,quantity+1))}><Plus size={14}/></button></div><div className="font-bold">{formatMoney(effectivePrice(product.priceCents,product.salePriceCents)*quantity)}</div></div></div></div>)}</div></div><aside className="surface h-fit p-6 lg:sticky lg:top-28"><h2 className="text-xl font-bold">Order summary</h2><div className="mt-6 space-y-3 text-sm"><div className="flex justify-between"><span className="muted">Subtotal</span><strong>{formatMoney(subtotal)}</strong></div><div className="flex justify-between"><span className="muted">Shipping</span><strong>{shipping?formatMoney(shipping):"Free"}</strong></div><div className="border-t border-[#dedbd3] pt-4 text-base"><div className="flex justify-between"><span className="font-bold">Total</span><span className="font-black">{formatMoney(total)}</span></div></div></div><Link href="/checkout" className="btn-primary mt-6 w-full">Checkout</Link><p className="muted mt-4 text-center text-xs">Taxes calculated where required.</p></aside></div>;
+}

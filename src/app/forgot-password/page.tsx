@@ -1,0 +1,3 @@
+import { AuthCard, Notice } from "@/components/auth/auth-card";
+import { forgotPasswordAction } from "@/lib/actions/auth";
+export default async function ForgotPage({searchParams}:{searchParams:Promise<{error?:string;message?:string}>}){const p=await searchParams;return <section className="container-shell py-16"><AuthCard title="Reset password" subtitle="We’ll email you a secure link to choose a new password."><Notice error={p.error} message={p.message}/><form action={forgotPasswordAction} className="space-y-4"><label><span className="label">Email</span><input className="input" name="email" type="email" required/></label><button className="btn-primary w-full">Send reset link</button></form></AuthCard></section>}

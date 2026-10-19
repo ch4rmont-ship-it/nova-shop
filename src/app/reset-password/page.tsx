@@ -1,0 +1,3 @@
+import { AuthCard, Notice } from "@/components/auth/auth-card";
+import { resetPasswordAction } from "@/lib/actions/auth";
+export default async function ResetPage({searchParams}:{searchParams:Promise<{error?:string}>}){const p=await searchParams;return <section className="container-shell py-16"><AuthCard title="Choose a new password" subtitle="Use at least 8 characters."><Notice error={p.error}/><form action={resetPasswordAction} className="space-y-4"><label><span className="label">New password</span><input className="input" name="password" type="password" minLength={8} required/></label><button className="btn-primary w-full">Update password</button></form></AuthCard></section>}

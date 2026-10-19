@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function CancelPage(){return <section className="container-shell py-20"><div className="surface mx-auto max-w-2xl p-10 text-center"><h1 className="text-3xl font-black">Checkout cancelled</h1><p className="muted mt-3">No payment was completed. Your cart is still available.</p><Link className="btn-primary mt-7" href="/cart">Return to cart</Link></div></section>}

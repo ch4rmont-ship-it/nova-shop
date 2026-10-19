@@ -1,0 +1,2 @@
+import { logoutAction } from "@/lib/actions/auth";
+export default function SettingsPage(){return <div><p className="eyebrow">Account</p><h1 className="mt-2 text-4xl font-black">Settings</h1><div className="surface mt-8 p-6"><h2 className="font-bold">Session</h2><p className="muted mt-2 text-sm">Sign out from this browser. Supabase will clear the current auth session.</p><form action={logoutAction}><button className="btn-primary mt-5">Sign out</button></form></div></div>}

@@ -1,0 +1,3 @@
+import { ShopClient } from "@/components/product/shop-client";
+import { getCategories, getProducts } from "@/lib/data/catalog";
+export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string; sort?: string }> }) { const [{q="",sort="newest"},products,categories]=await Promise.all([searchParams,getProducts(),getCategories()]); return <section className="container-shell py-10"><p className="eyebrow">Find it fast</p><h1 className="mb-8 mt-2 text-4xl font-black">Search</h1><ShopClient products={products} categories={categories} initialQuery={q} initialSort={sort}/></section>; }
