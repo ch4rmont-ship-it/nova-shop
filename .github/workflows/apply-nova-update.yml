@@ -1,4 +1,4 @@
-# Trigger registered workflow.
+# Retry with integrity-safe chunk split.
 name: Apply NOVA Mongolia catalog update
 
 on:
@@ -18,7 +18,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat .nova-update/parts/00 .nova-update/parts/01 .nova-update/parts/02 .nova-update/parts/03 .nova-update/parts/04 .nova-update/parts/05 > /tmp/nova-update.b64
+          cat .nova-update/parts/00a .nova-update/parts/00b .nova-update/parts/01 .nova-update/parts/02 .nova-update/parts/03 .nova-update/parts/04 .nova-update/parts/05 > /tmp/nova-update.b64
           base64 --decode /tmp/nova-update.b64 > /tmp/nova-update.tar.gz
           echo "8bd8b8c08d69049206acd4c6f49a84b07b91184402c40b1189e0f5db57438c4f  /tmp/nova-update.tar.gz" | sha256sum -c -
           tar -xzf /tmp/nova-update.tar.gz -C .
