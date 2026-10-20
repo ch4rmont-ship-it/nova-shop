@@ -29,3 +29,14 @@
 - Lead times, packed weights, freight quotations and other-cost reserve must be confirmed with suppliers/carrier.
 
 See README.md for the exact deployment target and setup instructions.
+# Account update — 2026-10-20
+
+- Redesigned responsive account overview and profile form; real order/favorite/address counts.
+- Saved addresses support create, edit, delete and an atomic default selection; checkout uses saved addresses and profile details.
+- Owner admin access is bound to the existing verified user ID, never merely an email claim.
+- Added 3 researched JD products (11 total), 6 supplier photos and documented landed-cost estimates with approximately 35% markup. All remain clearly marked preorders, with no invented on-hand stock.
+- Account SQL regression checks passed: address creation/edit/default, favorites, cross-user isolation, and owner email spoof rejection. Fixtures rolled back.
+- TypeScript, lint and production build passed for account changes.
+- Pending: hosted Supabase Confirm email remains ON. The connected database tools cannot change hosted Auth configuration. NOVA dashboard → Authentication → Sign In / Providers → Email → Confirm email OFF → Save. No LinguaFlow changes.
+- Browser-level signed-in account flow has not been re-tested in this update.
+

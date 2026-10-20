@@ -238,5 +238,96 @@
     ],
     "createdAt": "2026-10-19T09:00:00Z",
     "sourceUrl": "https://item.jd.com/product/hasjNiCKOO-eZsRQVwsYtA.html"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000009",
+    "categoryId": "22222222-2222-4222-8222-222222222222",
+    "brand": "UGREEN",
+    "name": "Кабель тогтоогч · цагаан 2 ширхэг",
+    "slug": "ugreen-20629-white-clips",
+    "sourceUrl": "https://item.jd.com/product/ZZdIfYcf7lNKbjj612Yiqw.html",
+    "sku": "NV-DES-009",
+    "shortDescription": "Ширээний цэнэглэгч, чихэвчний кабелиа тогтоох дөрвөн ховилтой цагаан тогтоогч.",
+    "description": "Ширээний цэнэглэгч, чихэвчний кабелиа тогтоох дөрвөн ховилтой цагаан тогтоогч. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 2250000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Загвар": "20629",
+      "Өнгө": "Цагаан",
+      "Багц": "2 ширхэг",
+      "Ховил": "4"
+    },
+    "images": [
+      "/products/ugreen-20629-white-clips-0.jpg",
+      "/products/ugreen-20629-white-clips-1.jpg"
+    ],
+    "createdAt": "2026-10-20T08:00:00Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000010",
+    "categoryId": "44444444-4444-4444-8444-444444444444",
+    "brand": "Banzheni",
+    "name": "Аяллын ачааны шошго · ногоон",
+    "slug": "banzheni-green-travel-tag",
+    "sourceUrl": "https://item.jd.com/product/OcPm1gD_1H-Rrglp0xy1_A.html",
+    "sku": "NV-CAR-010",
+    "shortDescription": "Ачаагаа хялбар таних ногоон шошго. Холбоо барих мэдээллээ доторх цаасан дээр бичээрэй.",
+    "description": "Ачаагаа хялбар таних ногоон шошго. Холбоо барих мэдээллээ доторх цаасан дээр бичээрэй. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 1650000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Материал": "PVC / цаас",
+      "Хэмжээ": "100 × 90 × 5 мм",
+      "Өнгө": "Ногоон"
+    },
+    "images": [
+      "/products/banzheni-green-travel-tag-0.jpg",
+      "/products/banzheni-green-travel-tag-1.jpg"
+    ],
+    "createdAt": "2026-10-20T08:00:00Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000011",
+    "categoryId": "33333333-3333-4333-8333-333333333333",
+    "brand": "UGREEN",
+    "name": "Дахин ашиглах кабель боогч · 5 м",
+    "slug": "ugreen-45605-cable-roll",
+    "sourceUrl": "https://item.jd.com/product/U1a4sSBRTF2klA3pEvfxcQ.html",
+    "sku": "NV-ORG-011",
+    "shortDescription": "Кабель, утаснуудаа хэрэгтэй уртаар нь тасалж багцлах дахин ашигладаг ороомог боогч.",
+    "description": "Кабель, утаснуудаа хэрэгтэй уртаар нь тасалж багцлах дахин ашигладаг ороомог боогч. Захиалгаар нийлүүлнэ. Ирэх хугацааны урьдчилсан тооцоо 10–21 хоног; захиалгыг батлахдаа хугацааг тохиролцоно.",
+    "priceCents": 3150000,
+    "salePriceCents": null,
+    "stock": 0,
+    "preorder": true,
+    "featured": true,
+    "bestseller": false,
+    "active": true,
+    "rating": 0,
+    "reviewCount": 0,
+    "specifications": {
+      "Загвар": "45605",
+      "Урт": "5 м",
+      "Зориулалт": "Кабель цэгцлэх"
+    },
+    "images": [
+      "/products/ugreen-45605-cable-roll-0.jpg",
+      "/products/ugreen-45605-cable-roll-1.jpg"
+    ],
+    "createdAt": "2026-10-20T08:00:00Z"
   }
 ]

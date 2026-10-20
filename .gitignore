@@ -9,3 +9,4 @@ node_modules
 *.tsbuildinfo
 supabase/.temp/
 .env.*.local
+__pycache__/
