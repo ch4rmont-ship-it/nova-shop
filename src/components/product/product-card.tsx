@@ -1,29 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShoppingBag, Star } from "lucide-react";
-import { useStore } from "@/components/store-provider";
-import { discountPercent, effectivePrice, formatMoney } from "@/lib/utils";
-import type { Product } from "@/types";
-
-export function ProductCard({ product }: { product: Product }) {
-  const { addToCart, favorites, toggleFavorite } = useStore();
-  const current = effectivePrice(product.priceCents, product.salePriceCents);
-  const discount = discountPercent(product.priceCents, product.salePriceCents);
-  const favorite = favorites.includes(product.id);
-  return <article className="group min-w-0">
-    <div className="relative overflow-hidden rounded-[24px] border border-[#dedbd3] bg-white shadow-[0_12px_35px_rgba(25,31,27,.05)]">
-      <Link href={`/product/${product.slug}`} className="block aspect-[4/5]"><Image src={product.images[0]} alt={product.name} fill className="object-contain p-3 transition duration-500 group-hover:scale-[1.025]" sizes="(max-width: 760px) 50vw, 25vw"/></Link>
-      <div className="absolute left-3 top-3 flex gap-2">{discount ? <span className="rounded-full bg-[#171816] px-2.5 py-1 text-[10px] font-bold text-white">-{discount}%</span>:null}{product.bestseller ? <span className="rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold shadow-sm">Хит</span>:null}</div>
-      <button aria-label="Хадгалах" onClick={()=>toggleFavorite(product.id)} className="absolute right-3 top-3 grid size-9 place-items-center rounded-full bg-white/95 shadow-sm"><Heart size={17} fill={favorite ? "currentColor" : "none"}/></button>
-      <button aria-label="Сагсанд нэмэх" disabled={!product.preorder&&product.stock<=0} onClick={()=>addToCart(product.id)} className="absolute bottom-3 right-3 grid size-10 place-items-center rounded-full bg-[#171816] text-white shadow-lg transition sm:opacity-0 sm:group-hover:opacity-100 disabled:opacity-40"><ShoppingBag size={17}/></button>
-    </div>
-    <div className="pt-3">
-      <p className="mb-1 text-[10px] font-bold uppercase tracking-[.15em] text-[#6d716b]">{product.brand}</p>
-      <div className="flex flex-col items-start justify-between gap-1 sm:flex-row sm:gap-3"><Link href={`/product/${product.slug}`} className="min-w-0 text-sm font-bold leading-5 hover:underline">{product.name}</Link><div className="shrink-0 text-sm font-black">{formatMoney(current)}</div></div>
-      <div className="mt-1 flex items-center justify-between gap-2 text-xs text-[#6d716b]"><span>{product.preorder ? "Захиалгаар · 10–21 хоног" : product.stock > 0 ? (product.stock <= 7 ? `Үлдэгдэл ${product.stock}` : "Бэлэн") : "Дууссан"}</span>{product.reviewCount>0?<span className="flex items-center gap-1"><Star size={12} fill="currentColor"/> {product.rating.toFixed(1)}</span>:<span>Шинэ</span>}</div>
-      {product.salePriceCents ? <div className="mt-1 text-xs text-[#6d716b] line-through">{formatMoney(product.priceCents)}</div>:null}
-    </div>
-  </article>;
-}
+import {Heart,Plus} from "lucide-react";
+import {useStore} from "@/components/store-provider";
+import {discountPercent,effectivePrice,formatMoney} from "@/lib/utils";
+import type {Product} from "@/types";
+export function ProductCard({product:p}:{product:Product}){const{addToCart,favorites,toggleFavorite}=useStore();const liked=favorites.includes(p.id);const discount=discountPercent(p.priceCents,p.salePriceCents);return <article className="group min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-orange-200 hover:shadow-lg"><div className="relative bg-[#fafafa]"><Link href={`/product/${p.slug}`} className="relative block aspect-square"><Image src={p.images[0]} alt={p.name} fill className="object-contain p-4 transition group-hover:scale-105" sizes="(max-width:760px) 46vw,(max-width:1024px) 30vw,22vw"/></Link><button aria-label={liked?"Таалагдсанаас хасах":"Таалагдсанд нэмэх"} aria-pressed={liked} onClick={()=>toggleFavorite(p.id)} className={`absolute right-2 top-2 grid size-9 place-items-center rounded-full bg-white shadow-sm ${liked?"text-orange-600":"text-slate-500"}`}><Heart size={17} fill={liked?"currentColor":"none"}/></button>{discount>0&&<span className="absolute left-2 top-2 rounded bg-[#ed5b21] px-2 py-1 text-xs font-bold text-white">−{discount}%</span>}</div><div className="p-3 sm:p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">{p.brand}</p><Link href={`/product/${p.slug}`} className="mt-2 line-clamp-2 min-h-10 text-sm leading-5 hover:text-orange-700">{p.name}</Link><div className="mt-3 flex flex-wrap items-baseline gap-2"><strong className="text-lg font-black sm:text-xl">{formatMoney(effectivePrice(p.priceCents,p.salePriceCents))}</strong>{p.salePriceCents!==null&&<del className="text-xs text-slate-400">{formatMoney(p.priceCents)}</del>}</div><p className="mt-1 text-[10px] text-slate-500">1 ширхэгээс захиалах боломжтой</p><div className="mt-4 flex items-center justify-between gap-1 border-t border-slate-100 pt-3"><span className={`text-[10px] font-semibold ${p.preorder?"text-amber-700":p.stock>0?"text-emerald-700":"text-slate-400"}`}>{p.preorder?"Захиалгаар · 10–21 хоног":p.stock>0?`Бэлэн · ${p.stock} ш`:"Дууссан"}</span><button aria-label={`${p.name} сагсанд нэмэх`} disabled={!p.preorder&&p.stock<=0} onClick={()=>addToCart(p.id)} className="grid size-8 shrink-0 place-items-center rounded-full border border-orange-200 bg-orange-50 text-orange-700 hover:bg-orange-100 disabled:opacity-30"><Plus size={18}/></button></div></div></article>}

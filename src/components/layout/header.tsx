@@ -1,33 +1,7 @@
 "use client";
-
 import Link from "next/link";
-import { Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
-import { useState } from "react";
-import { useStore } from "@/components/store-provider";
-
-const links = [["Нүүр","/"],["Дэлгүүр","/shop"],["Ангилал","/categories"]] as const;
-
-export function Header() {
-  const [open, setOpen] = useState(false);
-  const { cartCount, favorites } = useStore();
-  return <>
-    <div className="bg-[#171816] px-4 py-2 text-center text-[10px] font-bold uppercase tracking-[.16em] text-white sm:text-[11px]">₮150,000-аас дээш захиалгад хүргэлт үнэгүй · УБ болон орон нутагт хүргэнэ</div>
-    <header className="sticky top-0 z-40 border-b border-[#dedbd3]/80 bg-[#f7f5f0]/95 backdrop-blur">
-      <div className="container-shell flex h-17 items-center justify-between gap-4">
-        <button className="lg:hidden" aria-label="Цэс нээх" onClick={() => setOpen(true)}><Menu size={22}/></button>
-        <Link href="/" className="text-xl font-black tracking-[.18em]">NOVA</Link>
-        <nav className="hidden items-center gap-7 lg:flex">{links.map(([label,href])=><Link key={href} href={href} className="text-sm font-semibold hover:opacity-60">{label}</Link>)}</nav>
-        <div className="flex items-center gap-3 sm:gap-4">
-          <Link href="/search" aria-label="Хайх"><Search size={20}/></Link>
-          <Link href="/favorites" aria-label="Хадгалсан" className="relative"><Heart size={20}/>{favorites.length ? <span className="absolute -right-2 -top-2 rounded-full bg-[#1f4d3a] px-1.5 text-[9px] text-white">{favorites.length}</span>:null}</Link>
-          <Link href="/cart" aria-label="Сагс" className="relative"><ShoppingBag size={20}/>{cartCount ? <span className="absolute -right-2 -top-2 rounded-full bg-[#1f4d3a] px-1.5 text-[9px] text-white">{cartCount}</span>:null}</Link>
-          <Link href="/account" aria-label="Бүртгэл"><User size={20}/></Link>
-        </div>
-      </div>
-    </header>
-    {open ? <div className="fixed inset-0 z-50 bg-black/30 lg:hidden" onClick={() => setOpen(false)}><div className="h-full w-[85%] max-w-sm bg-[#f7f5f0] p-5" onClick={(e)=>e.stopPropagation()}>
-      <div className="mb-10 flex items-center justify-between"><span className="text-xl font-black tracking-[.18em]">NOVA</span><button aria-label="Цэс хаах" onClick={()=>setOpen(false)}><X/></button></div>
-      <nav className="grid gap-1">{links.map(([label,href])=><Link onClick={()=>setOpen(false)} key={href} href={href} className="rounded-xl px-3 py-4 text-lg font-bold hover:bg-white">{label}</Link>)}<Link onClick={()=>setOpen(false)} href="/account" className="rounded-xl px-3 py-4 text-lg font-bold hover:bg-white">Миний бүртгэл</Link></nav>
-    </div></div>:null}
-  </>;
-}
+import {Heart,LayoutDashboard,Menu,Search,ShoppingCart,UserRound,X,Truck} from "lucide-react";
+import {useState} from "react";
+import {useStore} from "@/components/store-provider";
+const cats=[["DRIVE · Машин","drive"],["DESK · Ширээ","desk"],["ORGANIZE · Гэр","organize"],["CARRY · Аялал","carry"]];
+export function Header(){const[open,setOpen]=useState(false);const{cartCount,favorites}=useStore();return <><div className="bg-[#23252a] text-white"><div className="container-shell flex justify-between gap-3 py-2 text-[10px] sm:text-xs"><span className="flex items-center gap-2"><Truck size={13}/>150,000₮-өөс дээш хүргэлт үнэгүй</span><span>Монгол · MNT ₮</span></div></div><header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm"><div className="container-shell flex flex-wrap items-center gap-3 py-4 sm:gap-6"><button onClick={()=>setOpen(true)} className="lg:hidden" aria-label="Цэс нээх"><Menu size={23}/></button><Link href="/" className="mr-auto text-3xl font-black tracking-[-.06em] text-[#ed5b21] lg:mr-2">NOVA<span className="ml-1 text-sm tracking-normal text-slate-800">shop</span></Link><form action="/shop" role="search" className="order-last flex w-full overflow-hidden rounded-full border-2 border-[#ed5b21] lg:order-none lg:w-auto lg:flex-1"><label htmlFor="global-search" className="sr-only">Бараа хайх</label><input id="global-search" name="q" placeholder="Юу хайж байна вэ?" className="min-w-0 flex-1 bg-transparent px-5 py-2.5 text-sm outline-none"/><button aria-label="Хайх" className="flex items-center gap-2 bg-[#ed5b21] px-5 text-sm font-bold text-white"><Search size={19}/><span className="hidden sm:inline">Хайх</span></button></form><div className="flex items-center gap-4 sm:gap-5"><Link href="/account" className="flex flex-col items-center gap-1 text-[10px]" aria-label="Миний бүртгэл"><UserRound size={22}/><span className="hidden sm:block">Миний бүртгэл</span></Link><Link href="/favorites" className="relative flex flex-col items-center gap-1 text-[10px]" aria-label="Таалагдсан бараа"><Heart size={22}/><span className="hidden sm:block">Таалагдсан</span>{favorites.length>0&&<span className="market-count">{favorites.length}</span>}</Link><Link href="/cart" className="relative flex flex-col items-center gap-1 text-[10px]" aria-label="Сагс"><ShoppingCart size={22}/><span className="hidden sm:block">Миний сагс</span>{cartCount>0&&<span className="market-count">{cartCount}</span>}</Link></div></div><div className="border-t border-slate-100"><nav aria-label="Үндсэн цэс" className="container-shell flex items-center gap-5 overflow-x-auto py-3 text-xs font-semibold whitespace-nowrap"><Link href="/shop" className="flex items-center gap-2"><Menu size={16}/>Бүх бараа</Link>{cats.map(([n,s])=><Link className="hidden hover:text-orange-700 sm:block" key={s} href={`/category/${s}`}>{n}</Link>)}<Link href="/shop?sort=newest">Шинэ бараа</Link><Link href="/admin" className="ml-auto flex items-center gap-2 rounded-full bg-orange-50 px-3 py-1.5 font-bold text-[#b84013]"><LayoutDashboard size={15}/>Admin самбар</Link></nav></div></header>{open&&<div className="fixed inset-0 z-50 bg-black/40" onClick={()=>setOpen(false)}><div role="dialog" aria-modal="true" aria-label="Үндсэн цэс" className="h-full w-[86%] max-w-sm overflow-auto bg-white p-6" onClick={e=>e.stopPropagation()}><div className="mb-8 flex justify-between"><strong className="text-2xl text-[#ed5b21]">NOVA shop</strong><button aria-label="Цэс хаах" onClick={()=>setOpen(false)}><X/></button></div><nav className="grid gap-2">{[["Бүх бараа","/shop"],...cats.map(([n,s])=>[n,`/category/${s}`]),["Миний бүртгэл","/account"],["Миний захиалгууд","/account/orders"],["Admin самбар","/admin"]].map(([n,h])=><Link key={h} href={h} onClick={()=>setOpen(false)} className="rounded-xl border border-slate-100 p-4 text-sm font-bold">{n}</Link>)}</nav></div></div>}</>}

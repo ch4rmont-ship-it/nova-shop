@@ -1,5 +1,16 @@
 # NOVA implementation and verification
 
+## Marketplace and admin update — 2026-10-28
+
+- Alibaba-inspired NOVA marketplace layout: prominent search, category navigation, compact product cards, consistent MNT prices, responsive desktop/mobile layouts.
+- Always-visible Admin entry in the header, mobile menu and footer. Login preserves `/admin`; non-admin accounts get an explanatory page showing their own signed-in email.
+- Existing verified owner `ch4rmont@gmail.com` remains admin. No email-based automatic privilege grants.
+- Mongolian product editor supports create/edit, price and stock, multiple image uploads, primary-image selection/removal, source information and visibility.
+- Images upload directly to Supabase Storage under admin RLS (JPEG/PNG/WebP, 5 MB each, 10 per product), avoiding server-action file-size limits.
+- Catalog writes are transactional. Quick price/stock updates and reversible hide/publish preserve order history.
+- Build and typecheck passed. SQL tests verify actual owner access, atomic rollback, catalog changes and customer write denial. Browser tests verify login/dashboard, image upload, product creation, full editing and quick price/stock persistence.
+- Hosted Auth Confirm email and leaked-password protection still require dashboard configuration. Payment remains cash on delivery; no online payment credentials were supplied.
+
 2026-10-19. Dedicated database: `gskzwsbootemeibfhltp`. LinguaFlow was not modified.
 
 ## Implemented
@@ -39,4 +50,3 @@ See README.md for the exact deployment target and setup instructions.
 - TypeScript, lint and production build passed for account changes.
 - Pending: hosted Supabase Confirm email remains ON. The connected database tools cannot change hosted Auth configuration. NOVA dashboard → Authentication → Sign In / Providers → Email → Confirm email OFF → Save. No LinguaFlow changes.
 - Browser-level signed-in account flow has not been re-tested in this update.
-

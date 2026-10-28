@@ -3,6 +3,8 @@ export function cn(...classes: Array<string | false | null | undefined>) {
 }
 
 export function formatMoney(cents: number, currency = "MNT") {
+  // Browser ICU support for mn-MN differs from Node. Keep MNT SSR/client identical.
+  if (currency.toUpperCase() === "MNT") return `${new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(cents / 100)}₮`;
   return new Intl.NumberFormat("mn-MN", { style: "currency", currency, maximumFractionDigits: 0 }).format(cents / 100);
 }
 
