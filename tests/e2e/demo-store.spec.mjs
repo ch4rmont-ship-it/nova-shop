@@ -17,7 +17,7 @@ test("demo item details, cart persistence, quantity and no-payment checkout work
  await page.getByRole("button",{name:"Demo сагсанд нэмэх"}).click();
  await page.goto("/demo-store/cart");
  await expect(page.getByText("Luma ширээний LED гэрэл")).toBeVisible();
- await expect(page.getByText("129,000")).toBeVisible();
+ await expect(page.getByText("129,000 ₮",{exact:true}).first()).toBeVisible();
  await page.getByRole("button",{name:"Increase luma-desk-light"}).click();
  await expect(page.getByLabel("Quantity luma-desk-light")).toHaveText("2");
  await page.reload();
