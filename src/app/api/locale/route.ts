@@ -9,6 +9,7 @@ export async function POST(request:Request){
  const locale=typeof data==="object" && data!==null && "locale" in data?data.locale:undefined;
  if(!isLocale(locale))return NextResponse.json({error:"Unsupported locale"},{status:400});
  const response=NextResponse.json({locale},{headers:{"Cache-Control":"no-store"}});
- response.cookies.set("smartshop_locale",locale,{path:"/",sameSite:"lax",secure:process.env.NODE_ENV==="production",httpOnly:true,maxAge:60*60*24*365});
+ const secure=new URL(request.url).protocol==="https:" || request.headers.get("x-forwarded-proto")==="https";
+ response.cookies.set("smartshop_locale",locale,{path:"/",sameSite:"lax",secure,httpOnly:true,maxAge:60*60*24*365});
  return response;
 }

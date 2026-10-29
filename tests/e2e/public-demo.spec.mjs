@@ -11,7 +11,12 @@ test("switching to Chinese persists via secure locale cookie and changes server-
  await page.goto("/");
  const select=page.getByRole("combobox",{name:"Language / Хэл / 语言"});
  await expect(select).toBeVisible();
+ const responsePromise=page.waitForResponse(response=>response.url().includes("/api/locale"));
  await select.selectOption("zh");
+ const localeResponse=await responsePromise;
+ expect(localeResponse.status()).toBe(200);
+ const cookieCheck=(await context.cookies()).find(c=>c.name==="smartshop_locale");
+ expect(cookieCheck?.value).toBe("zh");
  await expect(page.locator("html")).toHaveAttribute("lang","zh");
  await expect(page.getByRole("heading",{level:1})).toContainText("开启智能电商运营新时代");
  await page.reload();
@@ -40,5 +45,5 @@ test("marketing, analytics, finance and product selection require admin login",a
 });
 test("public help does not misrepresent rules as AI",async({page})=>{
  await page.goto("/support");
- await expect(page.getByText(/AI хараахан холбогдоогүй/)).toBeVisible();
+ await expect(page.locator("p:visible").filter({hasText:"AI хараахан холбогдоогүй"}).first()).toBeVisible();
 });
