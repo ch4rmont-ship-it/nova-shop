@@ -1,5 +1,4 @@
 import { unstable_rethrow } from "next/navigation";
-import { categories as seedCategories, products as seedProducts } from "@/data/catalog";
 import { supabaseConfigured } from "@/lib/env";
 import { createClient } from "@/lib/supabase/server";
 import type { Category, Product } from "@/types";
@@ -43,7 +42,7 @@ function mapProduct(row: Record<string, unknown>): Product {
 }
 
 export async function getCategories(): Promise<Category[]> {
-  if (!supabaseConfigured()) return seedCategories;
+  if (!supabaseConfigured()) return [];
   try {
     const supabase = await createClient();
     const { data, error } = await supabase.from("categories").select("*").eq("active", true).order("name");
@@ -53,7 +52,7 @@ export async function getCategories(): Promise<Category[]> {
 }
 
 export async function getProducts(): Promise<Product[]> {
-  if (!supabaseConfigured()) return seedProducts;
+  if (!supabaseConfigured()) return [];
   try {
     const supabase = await createClient();
     const { data, error } = await supabase
