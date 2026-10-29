@@ -33,6 +33,8 @@ export type Product = {
   specifications: Record<string, string>;
   images: string[];
   createdAt: string;
+  searchTerms?: string[];
+  isPreview?: boolean;
 };
 
 export type CartLine = { productId: string; quantity: number };

@@ -1,40 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f5f7;
-  --foreground: #171816;
-  --muted: #6d716b;
-  --line: #e4e6e9;
+  --background: #f6f7fb;
+  --foreground: #172038;
+  --muted: #64748b;
+  --line: #e4e8f2;
   --card: #ffffff;
-  --accent: #ed5b21;
+  --accent: #4f46e5;
   --accent-foreground: #ffffff;
 }
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
-@layer base { a { color: inherit; text-decoration: none; } }
-button, input, select, textarea { font: inherit; }
-button { cursor: pointer; }
-::selection { background: #1f4d3a; color: white; }
-
-.container-shell { width: min(1400px, calc(100% - 40px)); margin-inline: auto; }
-@media (max-width: 640px) { .container-shell { width: min(100% - 24px, 1240px); } }
-
-.surface { background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
-.eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--muted); }
-.btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; border-radius:10px; background:#d94b13; color:white; padding:.8rem 1.15rem; font-weight:700; transition:.2s ease; }
-.btn-primary:hover { background:#b84013; transform:translateY(-1px); }
-.btn-secondary { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; border-radius:999px; border:1px solid var(--line); background:var(--card); padding:.8rem 1.15rem; font-weight:700; transition:.2s ease; }
-.btn-secondary:hover { border-color:#9b9e98; transform:translateY(-1px); }
-.input { width:100%; border:1px solid var(--line); background:white; border-radius:14px; padding:.8rem .95rem; outline:none; transition:.2s ease; }
-.input:focus { border-color:#5a725f; box-shadow:0 0 0 3px rgba(31,77,58,.10); }
-.label { display:block; font-size:13px; font-weight:700; margin-bottom:.4rem; }
-.muted { color:var(--muted); }
-.market-count{position:absolute;right:-8px;top:-7px;background:#d94b13;color:white;border-radius:20px;padding:1px 5px;font-size:9px;font-weight:700;}
-:focus-visible{outline:3px solid #ed5b21;outline-offset:3px;}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important;}}
-.grid-auto { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; }
-@media(max-width:1024px){ .grid-auto{grid-template-columns:repeat(3,minmax(0,1fr));} }
-@media(max-width:760px){ .grid-auto{grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px;} }
-@media(max-width:420px){ .grid-auto{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;} }
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--background);color:var(--foreground);font-family:Arial,"Noto Sans",Helvetica,sans-serif;-webkit-font-smoothing:antialiased;}
+@layer base{a{color:inherit;text-decoration:none;}}
+button,input,select,textarea{font:inherit;}
+button{cursor:pointer;}
+::selection{background:#dcd7ff;color:#29216c;}
+.container-shell{width:min(1400px,calc(100% - 48px));margin-inline:auto;}
+@media(max-width:640px){.container-shell{width:min(100% - 28px,1240px);}}
+.surface{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 5px 20px rgba(24,35,78,.025);}
+.eyebrow,.brand-eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:11px;font-weight:800;color:#4f46e5;}
+.btn-primary,.brand-btn-solid{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:12px;background:#4f46e5;color:#fff;padding:.8rem 1.15rem;font-weight:700;box-shadow:0 7px 18px rgba(79,70,229,.15);transition:background .2s,transform .2s,box-shadow .2s;}
+.btn-primary:hover,.brand-btn-solid:hover{background:#4338ca;transform:translateY(-1px);box-shadow:0 10px 24px rgba(79,70,229,.2);}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:12px;border:1px solid var(--line);background:var(--card);padding:.8rem 1.15rem;font-weight:700;transition:.2s ease;}
+.btn-secondary:hover{border-color:#a5b4fc;background:#eef2ff;}
+.input{width:100%;border:1px solid var(--line);background:white;border-radius:12px;padding:.8rem .95rem;outline:none;transition:.2s ease;}
+.input:focus{border-color:#818cf8;box-shadow:0 0 0 3px rgba(99,102,241,.12);}
+.label{display:block;font-size:13px;font-weight:700;margin-bottom:.4rem;}
+.muted{color:var(--muted);}
+.market-count{position:absolute;right:-7px;top:-6px;min-width:16px;text-align:center;background:#4f46e5;color:white;border-radius:20px;padding:2px 4px;font-size:9px;font-weight:800;}
+:focus-visible{outline:3px solid #818cf8;outline-offset:3px;}
+.brand-grid{background-image:linear-gradient(rgba(165,180,252,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(165,180,252,.13) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to right,transparent,black);}
+.brand-gradient-text{background:linear-gradient(100deg,#c4b5fd 0%,#a5b4fc 50%,#67e8f9 100%);background-clip:text;-webkit-background-clip:text;color:transparent;}
+.brand-feature-card{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;}
+.brand-feature-card:hover{transform:translateY(-4px);border-color:#c7d2fe;box-shadow:0 22px 45px rgba(50,47,120,.09);}
+.brand-kpi-card,.brand-panel{box-shadow:0 6px 24px rgba(46,54,106,.035);}
+.brand-header-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;color:#334155;transition:background .2s,color .2s;}
+.brand-header-icon:hover{background:#eef2ff;color:#4338ca;}
+.brand-display{animation:brand-rise .7s ease both;}
+@keyframes brand-rise{from{opacity:.5;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{transition:none!important;animation:none!important;}}
+.grid-auto{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;}
+@media(max-width:1024px){.grid-auto{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:760px){.grid-auto{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}}

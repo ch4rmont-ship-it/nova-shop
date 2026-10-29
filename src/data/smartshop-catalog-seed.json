@@ -1,0 +1,654 @@
+{
+  "categories": [
+    {
+      "slug": "desk-setup",
+      "names": {
+        "mn": "Ажлын ширээ",
+        "zh": "桌面办公",
+        "en": "Desk Setup"
+      }
+    },
+    {
+      "slug": "tech-accessories",
+      "names": {
+        "mn": "Технологи",
+        "zh": "数码配件",
+        "en": "Tech Accessories"
+      }
+    },
+    {
+      "slug": "everyday-carry",
+      "names": {
+        "mn": "Цүнх ба хадгалалт",
+        "zh": "通勤收纳",
+        "en": "Everyday Carry"
+      }
+    },
+    {
+      "slug": "home-essentials",
+      "names": {
+        "mn": "Гэрийн хэрэгсэл",
+        "zh": "家居用品",
+        "en": "Home Essentials"
+      }
+    },
+    {
+      "slug": "mobile-travel",
+      "names": {
+        "mn": "Утас ба аялал",
+        "zh": "手机与出行",
+        "en": "Mobile & Travel"
+      }
+    },
+    {
+      "slug": "lifestyle",
+      "names": {
+        "mn": "Өдөр тутмын хэрэглээ",
+        "zh": "生活方式",
+        "en": "Lifestyle"
+      }
+    }
+  ],
+  "products": [
+    {
+      "slug": "halo-reading-lamp",
+      "categorySlug": "desk-setup",
+      "sku": "SS-001",
+      "brand": "SmartShop Select",
+      "priceMnt": 79000,
+      "kind": "lamp",
+      "translations": {
+        "mn": {
+          "name": "Halo LED ширээний гэрэл",
+          "short": "Суралцах орчны ширээний гэрлийн концепц",
+          "description": "Суралцах орчны ширээний гэрлийн концепц. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Halo LED 阅读台灯",
+          "short": "学习空间台灯设计概念",
+          "description": "学习空间台灯设计概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Halo LED Reading Lamp",
+          "short": "Desk lamp design concept for studying",
+          "description": "Desk lamp design concept for studying. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "flex-laptop-riser",
+      "categorySlug": "desk-setup",
+      "sku": "SS-002",
+      "brand": "SmartShop Select",
+      "priceMnt": 95000,
+      "kind": "stand",
+      "translations": {
+        "mn": {
+          "name": "Flex ноутбукийн тавиур",
+          "short": "Зөөврийн компьютер өргөх тавиурын загвар",
+          "description": "Зөөврийн компьютер өргөх тавиурын загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Flex 笔记本支架",
+          "short": "笔记本增高支架概念",
+          "description": "笔记本增高支架概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Flex Laptop Riser",
+          "short": "Laptop riser concept",
+          "description": "Laptop riser concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "pivot-monitor-shelf",
+      "categorySlug": "desk-setup",
+      "sku": "SS-003",
+      "brand": "SmartShop Select",
+      "priceMnt": 129000,
+      "kind": "shelf",
+      "translations": {
+        "mn": {
+          "name": "Pivot дэлгэцний тавиур",
+          "short": "Дэлгэцний доорх зайг ашиглах тавиур",
+          "description": "Дэлгэцний доорх зайг ашиглах тавиур. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Pivot 显示器增高架",
+          "short": "显示器增高收纳架概念",
+          "description": "显示器增高收纳架概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Pivot Monitor Shelf",
+          "short": "Monitor shelf and storage concept",
+          "description": "Monitor shelf and storage concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "grip-desk-mat",
+      "categorySlug": "desk-setup",
+      "sku": "SS-004",
+      "brand": "SmartShop Select",
+      "priceMnt": 39000,
+      "kind": "mat",
+      "translations": {
+        "mn": {
+          "name": "Grip ширээний дэвсгэр",
+          "short": "Ширээ хамгаалах өргөн дэвсгэр",
+          "description": "Ширээ хамгаалах өргөн дэвсгэр. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Grip 大桌垫",
+          "short": "桌面保护垫设计概念",
+          "description": "桌面保护垫设计概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Grip Desk Mat",
+          "short": "Wide protective desk mat concept",
+          "description": "Wide protective desk mat concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "pulse-charging-pad",
+      "categorySlug": "tech-accessories",
+      "sku": "SS-005",
+      "brand": "SmartShop Select",
+      "priceMnt": 69000,
+      "kind": "charger",
+      "translations": {
+        "mn": {
+          "name": "Pulse цэнэглэгч суурь",
+          "short": "Авсаархан цэнэглэгч суурийн загвар",
+          "description": "Авсаархан цэнэглэгч суурийн загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Pulse 无线充电板",
+          "short": "小型充电板概念",
+          "description": "小型充电板概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Pulse Charging Pad",
+          "short": "Compact charging pad concept",
+          "description": "Compact charging pad concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "loop-cable-kit",
+      "categorySlug": "tech-accessories",
+      "sku": "SS-006",
+      "brand": "SmartShop Select",
+      "priceMnt": 29000,
+      "kind": "cable",
+      "translations": {
+        "mn": {
+          "name": "Loop кабелийн багц",
+          "short": "Кабель зохион байгуулах багц",
+          "description": "Кабель зохион байгуулах багц. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Loop 数据线套装",
+          "short": "线材整理套装概念",
+          "description": "线材整理套装概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Loop Cable Kit",
+          "short": "Cable management kit concept",
+          "description": "Cable management kit concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "bolt-usb-hub",
+      "categorySlug": "tech-accessories",
+      "sku": "SS-007",
+      "brand": "SmartShop Select",
+      "priceMnt": 119000,
+      "kind": "hub",
+      "translations": {
+        "mn": {
+          "name": "Bolt USB-C hub",
+          "short": "Олон порттой адаптерын загвар",
+          "description": "Олон порттой адаптерын загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Bolt USB-C 扩展坞",
+          "short": "多接口扩展坞概念",
+          "description": "多接口扩展坞概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Bolt USB-C Hub",
+          "short": "Multiport adapter concept",
+          "description": "Multiport adapter concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "click-mini-keyboard",
+      "categorySlug": "tech-accessories",
+      "sku": "SS-008",
+      "brand": "SmartShop Select",
+      "priceMnt": 149000,
+      "kind": "keyboard",
+      "translations": {
+        "mn": {
+          "name": "Click мини гар",
+          "short": "Жижиг байрлалтай гарын загвар",
+          "description": "Жижиг байрлалтай гарын загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Click 迷你键盘",
+          "short": "紧凑键盘概念",
+          "description": "紧凑键盘概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Click Compact Keyboard",
+          "short": "Compact keyboard concept",
+          "description": "Compact keyboard concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "trail-tech-pouch",
+      "categorySlug": "everyday-carry",
+      "sku": "SS-009",
+      "brand": "SmartShop Select",
+      "priceMnt": 59000,
+      "kind": "pouch",
+      "translations": {
+        "mn": {
+          "name": "Trail техникийн цүнх",
+          "short": "Кабелийн жижиг цүнх",
+          "description": "Кабелийн жижиг цүнх. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Trail 数码收纳包",
+          "short": "数码配件收纳包概念",
+          "description": "数码配件收纳包概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Trail Tech Pouch",
+          "short": "Tech accessory pouch concept",
+          "description": "Tech accessory pouch concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "metro-slim-backpack",
+      "categorySlug": "everyday-carry",
+      "sku": "SS-010",
+      "brand": "SmartShop Select",
+      "priceMnt": 169000,
+      "kind": "backpack",
+      "translations": {
+        "mn": {
+          "name": "Metro үүргэвч",
+          "short": "Хотын жижиг үүргэвч",
+          "description": "Хотын жижиг үүргэвч. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Metro 轻薄背包",
+          "short": "城市通勤背包概念",
+          "description": "城市通勤背包概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Metro Slim Backpack",
+          "short": "Slim city backpack concept",
+          "description": "Slim city backpack concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "air-sling-bag",
+      "categorySlug": "everyday-carry",
+      "sku": "SS-011",
+      "brand": "SmartShop Select",
+      "priceMnt": 99000,
+      "kind": "bag",
+      "translations": {
+        "mn": {
+          "name": "Air мөрний цүнх",
+          "short": "Хөнгөн мөрний цүнх",
+          "description": "Хөнгөн мөрний цүнх. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Air 斜挎包",
+          "short": "轻便斜挎包概念",
+          "description": "轻便斜挎包概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Air Sling Bag",
+          "short": "Everyday sling bag concept",
+          "description": "Everyday sling bag concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "packfold-organizer",
+      "categorySlug": "everyday-carry",
+      "sku": "SS-012",
+      "brand": "SmartShop Select",
+      "priceMnt": 79000,
+      "kind": "pouch",
+      "translations": {
+        "mn": {
+          "name": "PackFold аяллын уут",
+          "short": "Аяллын эд зүйл ялгах уут",
+          "description": "Аяллын эд зүйл ялгах уут. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "PackFold 旅行收纳袋",
+          "short": "旅行收纳袋概念",
+          "description": "旅行收纳袋概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "PackFold Organizer",
+          "short": "Packing organizer concept",
+          "description": "Packing organizer concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "glow-bedside-light",
+      "categorySlug": "home-essentials",
+      "sku": "SS-013",
+      "brand": "SmartShop Select",
+      "priceMnt": 85000,
+      "kind": "lamp",
+      "translations": {
+        "mn": {
+          "name": "Glow зөөлөн гэрэл",
+          "short": "Орны дэргэдэх гэрлийн загвар",
+          "description": "Орны дэргэдэх гэрлийн загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Glow 床头灯",
+          "short": "床头氛围灯概念",
+          "description": "床头氛围灯概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Glow Bedside Light",
+          "short": "Soft bedside light concept",
+          "description": "Soft bedside light concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "breeze-mini-fan",
+      "categorySlug": "home-essentials",
+      "sku": "SS-014",
+      "brand": "SmartShop Select",
+      "priceMnt": 99000,
+      "kind": "fan",
+      "translations": {
+        "mn": {
+          "name": "Breeze мини сэнс",
+          "short": "Ширээний жижиг сэнсний загвар",
+          "description": "Ширээний жижиг сэнсний загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Breeze 桌面风扇",
+          "short": "桌面小风扇概念",
+          "description": "桌面小风扇概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Breeze Mini Fan",
+          "short": "Mini desk fan concept",
+          "description": "Mini desk fan concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "pure-mini-humidifier",
+      "categorySlug": "home-essentials",
+      "sku": "SS-015",
+      "brand": "SmartShop Select",
+      "priceMnt": 139000,
+      "kind": "diffuser",
+      "translations": {
+        "mn": {
+          "name": "Pure мини чийгшүүлэгч",
+          "short": "Чийгшүүлэгчийн концепц загвар",
+          "description": "Чийгшүүлэгчийн концепц загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Pure 迷你加湿器",
+          "short": "迷你加湿器概念",
+          "description": "迷你加湿器概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Pure Mini Humidifier",
+          "short": "Mini humidifier concept",
+          "description": "Mini humidifier concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "nest-cable-clips",
+      "categorySlug": "home-essentials",
+      "sku": "SS-016",
+      "brand": "SmartShop Select",
+      "priceMnt": 25000,
+      "kind": "cable",
+      "translations": {
+        "mn": {
+          "name": "Nest кабель тогтоогч",
+          "short": "Кабель тогтоох жижиг хавчаар",
+          "description": "Кабель тогтоох жижиг хавчаар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Nest 理线夹",
+          "short": "理线夹组合概念",
+          "description": "理线夹组合概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Nest Cable Clips",
+          "short": "Cable clips concept",
+          "description": "Cable clips concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "orbit-car-holder",
+      "categorySlug": "mobile-travel",
+      "sku": "SS-017",
+      "brand": "SmartShop Select",
+      "priceMnt": 45000,
+      "kind": "stand",
+      "translations": {
+        "mn": {
+          "name": "Orbit машины утасны тавиур",
+          "short": "Машины утасны тогтоогчийн загвар",
+          "description": "Машины утасны тогтоогчийн загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Orbit 车载手机支架",
+          "short": "车载手机支架概念",
+          "description": "车载手机支架概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Orbit Car Holder",
+          "short": "Car phone holder concept",
+          "description": "Car phone holder concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "route-dash-pouch",
+      "categorySlug": "mobile-travel",
+      "sku": "SS-018",
+      "brand": "SmartShop Select",
+      "priceMnt": 49000,
+      "kind": "pouch",
+      "translations": {
+        "mn": {
+          "name": "Route машины зохион байгуулагч",
+          "short": "Машины жижиг зүйл хадгалах уут",
+          "description": "Машины жижиг зүйл хадгалах уут. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Route 车内收纳袋",
+          "short": "车内收纳袋概念",
+          "description": "车内收纳袋概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Route Dash Pouch",
+          "short": "Car accessory pouch concept",
+          "description": "Car accessory pouch concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "travel-gan-adapter",
+      "categorySlug": "mobile-travel",
+      "sku": "SS-019",
+      "brand": "SmartShop Select",
+      "priceMnt": 119000,
+      "kind": "charger",
+      "translations": {
+        "mn": {
+          "name": "Travel адаптер",
+          "short": "Аяллын адаптерын концепц",
+          "description": "Аяллын адаптерын концепц. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Travel 充电器",
+          "short": "旅行充电器概念",
+          "description": "旅行充电器概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Travel Adapter",
+          "short": "Travel charger concept",
+          "description": "Travel charger concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "fold-phone-stand",
+      "categorySlug": "mobile-travel",
+      "sku": "SS-020",
+      "brand": "SmartShop Select",
+      "priceMnt": 39000,
+      "kind": "stand",
+      "translations": {
+        "mn": {
+          "name": "Fold утасны тавиур",
+          "short": "Эвхэгддэг утасны тавиур",
+          "description": "Эвхэгддэг утасны тавиур. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Fold 折叠手机支架",
+          "short": "折叠手机支架概念",
+          "description": "折叠手机支架概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Fold Phone Stand",
+          "short": "Foldable phone stand concept",
+          "description": "Foldable phone stand concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "hydra-steel-bottle",
+      "categorySlug": "lifestyle",
+      "sku": "SS-021",
+      "brand": "SmartShop Select",
+      "priceMnt": 69000,
+      "kind": "bottle",
+      "translations": {
+        "mn": {
+          "name": "Hydra усны сав",
+          "short": "Дахин ашиглах усны савны загвар",
+          "description": "Дахин ашиглах усны савны загвар. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Hydra 水杯",
+          "short": "随身水杯概念",
+          "description": "随身水杯概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Hydra Steel Bottle",
+          "short": "Reusable bottle concept",
+          "description": "Reusable bottle concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "focus-weekly-planner",
+      "categorySlug": "lifestyle",
+      "sku": "SS-022",
+      "brand": "SmartShop Select",
+      "priceMnt": 25000,
+      "kind": "notebook",
+      "translations": {
+        "mn": {
+          "name": "Focus төлөвлөгч дэвтэр",
+          "short": "Долоо хоногийн төлөвлөгч",
+          "description": "Долоо хоногийн төлөвлөгч. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Focus 周计划本",
+          "short": "周计划记录本概念",
+          "description": "周计划记录本概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Focus Weekly Planner",
+          "short": "Weekly planner concept",
+          "description": "Weekly planner concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "calm-sleep-mask",
+      "categorySlug": "lifestyle",
+      "sku": "SS-023",
+      "brand": "SmartShop Select",
+      "priceMnt": 35000,
+      "kind": "mask",
+      "translations": {
+        "mn": {
+          "name": "Calm нүдний хаалт",
+          "short": "Амралтын нүдний хаалт",
+          "description": "Амралтын нүдний хаалт. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Calm 睡眠眼罩",
+          "short": "旅行睡眠眼罩概念",
+          "description": "旅行睡眠眼罩概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Calm Sleep Mask",
+          "short": "Travel sleep mask concept",
+          "description": "Travel sleep mask concept. Price and availability have not been verified."
+        }
+      }
+    },
+    {
+      "slug": "snap-key-case",
+      "categorySlug": "lifestyle",
+      "sku": "SS-024",
+      "brand": "SmartShop Select",
+      "priceMnt": 29000,
+      "kind": "case",
+      "translations": {
+        "mn": {
+          "name": "Snap түлхүүрний гэр",
+          "short": "Түлхүүрний жижиг гэр",
+          "description": "Түлхүүрний жижиг гэр. Үнэ, барааны үлдэгдэл баталгаажаагүй."
+        },
+        "zh": {
+          "name": "Snap 钥匙收纳套",
+          "short": "钥匙收纳保护套概念",
+          "description": "钥匙收纳保护套概念。价格与库存尚未验证。"
+        },
+        "en": {
+          "name": "Snap Key Case",
+          "short": "Key organizer case concept",
+          "description": "Key organizer case concept. Price and availability have not been verified."
+        }
+      }
+    }
+  ]
+}

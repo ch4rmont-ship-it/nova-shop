@@ -1,13 +1,8 @@
 import Link from "next/link";
-
-export function Footer() {
-  return <footer className="mt-24 border-t border-[#dedbd3] bg-[#171816] text-white">
-    <div className="container-shell grid gap-10 py-14 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
-      <div><div className="text-2xl font-black tracking-[.18em]">NOVA</div><p className="mt-4 max-w-sm text-sm leading-6 text-white/60">Машин, ширээ, гэр, аялалд өдөр бүр хэрэг болох цөөн боловч зөв сонгосон хэрэгслүүд.</p></div>
-      <div><h3 className="mb-4 text-sm font-bold">Дэлгүүр</h3><div className="grid gap-2 text-sm text-white/65"><Link href="/shop">Бүх бараа</Link><Link href="/categories">Ангилал</Link><Link href="/favorites">Хадгалсан</Link><Link href="/admin">Admin самбар</Link></div></div>
-      <div><h3 className="mb-4 text-sm font-bold">Миний NOVA</h3><div className="grid gap-2 text-sm text-white/65"><Link href="/account">Профайл</Link><Link href="/account/orders">Захиалгууд</Link><Link href="/account/addresses">Хаяг</Link></div></div>
-      <div><h3 className="mb-4 text-sm font-bold">Тусламж</h3><div className="grid gap-2 text-sm text-white/65"><span>УБ болон орон нутагт хүргэлт</span><span>Хүргэлт 12,000₮ · 150,000₮-өөс үнэгүй</span><span>Хүлээн авахдаа төлөх</span></div></div>
-    </div>
-    <div className="border-t border-white/10"><div className="container-shell flex flex-col gap-2 py-5 text-xs text-white/45 sm:flex-row sm:justify-between"><span>© 2026 NOVA Commerce</span><span>Захиалгаар · Урьдчилсан хугацаа 10–21 хоног</span></div></div>
-  </footer>;
+import {ArrowUpRight,ShieldCheck,Sparkles} from "lucide-react";
+import {t,type Locale} from "@/lib/i18n";
+export function Footer({locale}:{locale:Locale}){
+ const store=[["shop","/shop"],["support","/support"],["cart","/cart"],["account","/account"]] as const;
+ const business=[["dashboard","/admin"],["toolAnalytics","/admin/analytics"],["toolSelection","/admin/product-selection"],["toolMarketing","/admin/marketing"],["toolFinance","/admin/finance"]] as const;
+ return <footer className="bg-[#0b1025] text-white"><div className="container-shell grid gap-10 py-16 md:grid-cols-[1.7fr_1fr_1fr]"><div><Link href="/" className="inline-flex items-center gap-3 text-xl font-black"><span className="grid size-11 place-items-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600"><Sparkles size={23}/></span>SmartShop <span className="-ml-2 text-violet-300">AI</span></Link><p className="mt-5 max-w-sm text-sm leading-8 text-slate-400">一个人，也能运营一家智能电商公司。<span className="block">{t(locale,"heroDesc")}</span></p><p className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-2 text-xs text-slate-300"><ShieldCheck size={14}/>{t(locale,"honestNotice")}</p></div><div><p className="text-sm font-bold">{t(locale,"shop")}</p><div className="mt-5 grid gap-3">{store.map(([key,href])=><Link key={href} href={href} className="text-sm text-slate-400 hover:text-white">{t(locale,key)}</Link>)}</div></div><div><p className="text-sm font-bold">{t(locale,"adminTools")}</p><div className="mt-5 grid gap-3">{business.map(([key,href])=><Link key={href} href={href} className="text-sm text-slate-400 hover:text-white">{t(locale,key)}</Link>)}<Link href="/demo" className="inline-flex items-center gap-1 text-sm text-slate-400">{t(locale,"demo")}<ArrowUpRight size={14}/></Link></div></div></div><div className="border-t border-white/10"><div className="container-shell flex flex-wrap justify-between gap-2 py-6 text-xs text-slate-500"><span>© 2026 SmartShop AI</span><span>Demo ≠ live AI · Real data labeled</span></div></div></footer>;
 }
