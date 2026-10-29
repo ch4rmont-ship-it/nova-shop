@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sameOriginRequest } from "@/lib/security";
 import { z } from "zod";
 import { getCurrentProfile } from "@/lib/auth";
 
@@ -13,14 +14,15 @@ const schema = z.object({
   language: z.enum(["zh", "mn", "en"]).default("zh"),
   tone: z.enum(["professional", "friendly", "premium"]).default("professional"),
 });
-const windows = new Map<string, { count: number; start: number }>();
+// The legacy endpoint is kept only for backwards compatibility during migration.
 
 export async function POST(request: Request) {
+  if (!sameOriginRequest(request)) return NextResponse.json({ error: "Cross-origin request denied" }, { status: 403 });
   const profile = await getCurrentProfile();
   if (!profile) return NextResponse.json({ error: "Login required" }, { status: 401 });
   if (profile.role !== "admin") return NextResponse.json({ error: "Admin access required" }, { status: 403 });
   const key = process.env.OPENAI_API_KEY;
-  if (!key) return NextResponse.json({ error: "AI_NOT_CONFIGURED", message: "Set OPENAI_API_KEY on the server to enable real AI generation." }, { status: 503 });
+  if (process.env.AI_GENERATION_ENABLED !== "true" || !key) return NextResponse.json({ error: "AI_NOT_CONFIGURED", message: "Set OPENAI_API_KEY on the server to enable real AI generation." }, { status: 503 });
 
   if (Number(request.headers.get("content-length") || "0") > 12000)
     return NextResponse.json({ error: "Request too large" }, { status: 413 });
@@ -29,13 +31,8 @@ export async function POST(request: Request) {
   const parsed = schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid product data" }, { status: 400 });
 
-  const id = profile.id;
-  const now = Date.now();
-  const old = windows.get(id);
-  const current = !old || now - old.start >= 60_000 ? { count: 0, start: now } : old;
-  if (current.count >= 5) return NextResponse.json({ error: "Try again in one minute" }, { status: 429 });
-  current.count++;
-  windows.set(id, current);
+  // Legacy route does not have a distributed rate limiter: do not activate it in production.
+  if (process.env.NODE_ENV === "production") return NextResponse.json({ error: "Legacy endpoint disabled; use /api/ai/product-copy after rollout." }, { status: 410 });
 
   const { name, category, features, audience, specifications, language, tone } = parsed.data;
   const languageName = { zh: "Simplified Chinese", mn: "Mongolian", en: "English" }[language];

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sameOriginRequest } from "@/lib/security";
 import { z } from "zod";
 import { getCurrentUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -11,6 +12,8 @@ const Schema = z.object({
   language: z.enum(["中文", "Монгол", "English"])
 });
 export async function POST(request: Request) {
+  if (!sameOriginRequest(request)) return NextResponse.json({ error: "Cross-origin request denied." }, { status: 403 });
+  if (Number(request.headers.get("content-length") || 0) > 8192) return NextResponse.json({ error: "Request too large." }, { status: 413 });
   const user = await getCurrentUser();
   if (!user) return NextResponse.json({ error: "Login required." }, { status: 401 });
   const supabase = await createClient();
@@ -20,7 +23,7 @@ export async function POST(request: Request) {
   const parsed = Schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid product information." }, { status: 400 });
   const key = process.env.OPENAI_API_KEY;
-  if (!key) return NextResponse.json({ error: "AI is not configured. Add OPENAI_API_KEY in server environment. Demo mode is not a real AI." }, { status: 503 });
+  if (process.env.AI_GENERATION_ENABLED !== "true" || !key) return NextResponse.json({ error: "AI is not configured. Add OPENAI_API_KEY in server environment. Demo mode is not a real AI." }, { status: 503 });
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 18000);
   try {
@@ -43,7 +46,7 @@ export async function POST(request: Request) {
     const result: unknown = await response.json();
     const content = (result as { choices?: { message?: { content?: string } }[] })?.choices?.[0]?.message?.content;
     if (typeof content !== "string" || !content.trim()) return NextResponse.json({ error: "AI returned empty content." }, { status: 502 });
-    return NextResponse.json({ content, mode: "live-ai", requiresReview: true });
+    return NextResponse.json({ content, mode: "live-ai", requiresReview: true }, {headers: {"Cache-Control":"no-store"}});
   } catch {
     return NextResponse.json({ error: "AI request failed or timed out." }, { status: 504 });
   } finally { clearTimeout(timeout); }
