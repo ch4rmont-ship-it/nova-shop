@@ -11,7 +11,7 @@ function mapCategory(row: Record<string, unknown>,locale:Locale): Category {
     id: String(row.id),
     name: localizeCategory(String(row.slug),String(row.name),locale),
     slug: String(row.slug),
-    description: translated.description,
+    description: String(row.description||""),
     imageUrl: String(row.image_url || "/categories/drive.svg"),
     active: Boolean(row.active)
   };
@@ -28,7 +28,7 @@ function mapProduct(row: Record<string, unknown>,locale:Locale): Product {
     slug: String(row.slug),
     sku: String(row.sku),
     shortDescription: translated.short,
-    description: String(row.description || ""),
+    description: translated.description,
     priceCents: Number(row.price_cents),
     salePriceCents: row.sale_price_cents == null ? null : Number(row.sale_price_cents),
     stock: Number(row.stock),
