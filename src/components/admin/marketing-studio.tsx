@@ -39,7 +39,7 @@ export function MarketingStudio({locale}:{locale:Locale}){
  const [draft,setDraft]=useState("");
  const [saved,setSaved]=useState<SavedDraft[]>([]);
  const [ready,setReady]=useState(false);
- useEffect(()=>{try{const parsed=JSON.parse(localStorage.getItem(STORAGE)||"[]");if(Array.isArray(parsed))setSaved(parsed.filter(x=>x && typeof x.id==="string"&&typeof x.text==="string").slice(0,15));}catch{}setReady(true);},[]);
+ useEffect(()=>{const timer=window.setTimeout(()=>{try{const parsed=JSON.parse(localStorage.getItem(STORAGE)||"[]");if(Array.isArray(parsed))setSaved(parsed.filter(x=>x && typeof x.id==="string"&&typeof x.text==="string").slice(0,15));}catch{}setReady(true);},0);return()=>window.clearTimeout(timer);},[]);
  const generate=()=>{if(product.trim())setDraft(draftText(locale,template,product.trim(),audience,facts,cta,channel));};
  const save=()=>{if(!draft.trim())return;const newDraft:SavedDraft={id:crypto.randomUUID(),name:product.trim()||"Draft",channel,text:draft.slice(0,5000),created:new Date().toISOString()};const next=[newDraft,...saved].slice(0,15);try{localStorage.setItem(STORAGE,JSON.stringify(next));setSaved(next);}catch{}};
  const remove=(id:string)=>{const next=saved.filter(d=>d.id!==id);try{localStorage.setItem(STORAGE,JSON.stringify(next));setSaved(next);}catch{}};

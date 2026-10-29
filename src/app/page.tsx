@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {ArrowRight,ArrowUpRight,Bot,ChartNoAxesCombined,Check,CircleHelp,Calculator,Layers3,Megaphone,PackagePlus,ScanSearch,ShieldCheck,ShoppingBag,Sparkles,WandSparkles,Zap} from "lucide-react";
+import {ArrowRight,ArrowUpRight,Bot,ChartNoAxesCombined,Check,CircleHelp,Calculator,Megaphone,PackagePlus,ScanSearch,ShieldCheck,ShoppingBag,Sparkles,WandSparkles} from "lucide-react";
 import {getProducts} from "@/lib/data/catalog";
 import {ProductGrid} from "@/components/product/product-grid";
 import {getLocale} from "@/lib/i18n-server";
