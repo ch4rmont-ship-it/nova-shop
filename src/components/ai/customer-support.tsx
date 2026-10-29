@@ -12,8 +12,8 @@ const labels={
  en:{title:"Smart Customer Service",status:"Rule-based assistant · Live AI not connected",start:"Hi! Ask about products, prices, inventory, shipping or orders.",placeholder:"Ask a question...",send:"Send",reset:"New chat",empty:"The catalog may be empty. Product facts come only from actual store data.",error:"Request failed. Please try again.",buttons:["Products","Price","Stock","Shipping","Returns","Order"]}
 } as const;
 const intents:Intent[]=["products","price","stock","shipping","returns","order"];
-export function CustomerSupport(){
- const [language,setLanguage]=useState<Language>("zh");
+export function CustomerSupport({initialLanguage="mn"}:{initialLanguage?:Language}){
+ const [language,setLanguage]=useState<Language>(initialLanguage);
  const [draft,setDraft]=useState("");
  const [messages,setMessages]=useState<Message[]>([]);
  const [busy,setBusy]=useState(false);
