@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {ArrowUpRight, Bot, Code2, Layers3, Sparkles} from "lucide-react";
+import {ArrowUpRight, Bot, Code2, Layers3, ShieldCheck, Sparkles} from "lucide-react";
 const store=[["Бүтээгдэхүүн","/shop"],["Сагс","/cart"],["Профайл","/account"],["Хэрэглэгчийн туслах","/support"]];
 const business=[["Dashboard","/admin"],["AI Product Studio","/ai-studio"],["Analytics","/admin/analytics"],["Product Selection","/admin/product-selection"],["Marketing","/admin/marketing"]];
 const about=[["Үнийн загвар","/pricing"],["中文 Demo","/demo"],["GitHub repository","https://github.com/ch4rmont-ship-it/nova-shop"]];
