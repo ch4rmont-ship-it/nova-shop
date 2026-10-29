@@ -6,9 +6,9 @@ import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
-  title: { default: "NOVA — Modern essentials", template: "%s · NOVA" },
-  description: "Монголд зориулсан smart everyday essentials — машин, ширээ, гэр, аяллын practical бараанууд.",
-  openGraph: { title: "NOVA", description: "Smart everyday essentials, selected for Mongolia.", type: "website" }
+  title: { default: "SmartShop AI — Ухаалаг онлайн худалдаа", template: "%s · SmartShop AI" },
+  description: "SmartShop AI — AI туслахтай онлайн худалдааны платформ, нэг хүний дэлгүүрийн удирдлагын шийдэл.",
+  openGraph: { title: "SmartShop AI", description: "AI-powered commerce studio and storefront.", type: "website" }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
