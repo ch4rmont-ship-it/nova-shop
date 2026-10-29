@@ -5,7 +5,7 @@ test("SmartShop AI public landing is usable at desktop and mobile viewport",asyn
  await expect(page.getByRole("heading",{level:1})).toBeVisible();
  await expect(page.getByRole("link",{name:/SmartShop AI/}).first()).toBeVisible();
  await expect(page.locator("html")).toHaveAttribute("lang","mn");
- await expect(page.getByText("REAL DATA",{exact:true})).toBeVisible();
+ await expect(page.getByText("REAL DATA",{exact:true}).first()).toBeVisible();
 });
 test("switching to Chinese persists via secure locale cookie and changes server-rendered heading",async({page,context})=>{
  await page.goto("/");

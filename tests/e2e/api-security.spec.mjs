@@ -9,6 +9,10 @@ test("browser cross-origin mutations are blocked",async({request})=>{
  const response=await request.post("/api/ai/product-copy",{headers:{Origin:"https://untrusted.example"},data:{name:"Desk lamp",features:"Three modes",audience:"students",language:"English"}});
  expect(response.status()).toBe(403);
 });
+test("locale endpoint rejects a declared foreign origin",async({request})=>{
+ const r=await request.post("/api/locale",{headers:{Origin:"https://hostile.example"},data:{locale:"zh"}});
+ expect(r.status()).toBe(403);
+});
 test("locale endpoint rejects invalid values",async({request})=>{
  const response=await request.post("/api/locale",{data:{locale:"xx"}});
  expect(response.status()).toBe(400);
