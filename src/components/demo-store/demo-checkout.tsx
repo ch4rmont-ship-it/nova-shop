@@ -14,7 +14,7 @@ export function DemoCheckout({locale}:{locale:Locale}){
  const total=rows.reduce((n,row)=>n+row.p.priceMnt*row.qty,0);
  function confirm(){
   if(!ready||rows.length===0||receipt)return;
-  const reference="DEMO-"+Date.now().toString(36).toUpperCase();
+  const reference="DEMO-CLASSROOM";
   setReceipt({reference,total,count:rows.reduce((n,row)=>n+row.qty,0)});
   clear(); // local browser only: no API call, no payment, no Supabase writes
  }

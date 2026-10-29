@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {FlaskConical,ShoppingCart,ArrowLeft} from "lucide-react";
+import {FlaskConical,ArrowLeft} from "lucide-react";
 import {demoLabels} from "@/lib/demo/catalog";
 import type {Locale} from "@/lib/i18n";
 import {DemoCartLink} from "./demo-cart-link";
