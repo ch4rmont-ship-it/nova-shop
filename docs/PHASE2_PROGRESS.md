@@ -1,16 +1,21 @@
-# SmartShop AI — API-key-later build
+# SmartShop AI — API key deferred
 
-This branch keeps existing NOVA checkout and customer data intact. No database reset or schema changes.
+Active development branch: smartshop-ai. Existing commerce DB schema / RLS / authentication preserved.
 
-## Added
-- /admin/analytics: admin-only real Supabase payment-aware revenue and item counts; last 1000 orders explicitly scoped.
-- /admin/marketing: editable rule-template draft; clearly labeled demo, not AI.
-- /pricing: proposed Free, Pro and Enterprise subscription pricing; not a functioning checkout.
-- /demo: Chinese-language 9-part university presentation outline.
-- Admin sidebar links for new tools.
+## Implemented
+- Brand / responsive homepage and admin dashboard.
+- Product Studio AI endpoint — real generation requires OPENAI_API_KEY.
+- Rule-based catalog Customer Service, real-vs-demo Product Selection.
+- Three-language UI infrastructure, cookie setting and language switcher.
+- Multilingual storefront landing, catalog search/filter, global navigation, admin shell, marketing, analytics, finance, pricing, product studio, support initial locale.
+- Marketing rule template generator with local browser drafts.
+- Real paid-order analytics and profitability scenario calculator.
+- All demo figures explicitly labeled and never silently mixed with real business data.
 
-## Next
-- Customer-facing AI support with database-aware responses and clear unconfigured state.
-- Product selection, localization, redesign, and production hardening.
-- Connect OPENAI_API_KEY only after all key-independent features are ready.
-- Confirm preview deployment build and verify real browser behavior before production promotion.
+## Pending
+- Finish translating old commerce and admin forms.
+- Centralize translation for every remaining route and system error; browser end-to-end testing of locale persistence and phone layouts.
+- AI provider integration only after security, usage limits and API key are ready.
+- Customer support verified policies, live inventory and official supplier validation.
+- Persistent marketing campaigns (optional) and aggregate SQL for very large order volumes.
+- Production promotion remains gated on QA and user release decision.
