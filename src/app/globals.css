@@ -41,20 +41,18 @@ button{cursor:pointer;}
 @keyframes brand-rise{from{opacity:.5;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{transition:none!important;animation:none!important;}}
 
-/* Catalogue tracks its ACTUAL container width, including browser zoom and sidebars. */
-.shop-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;min-width:0;width:100%;align-items:start;}
-.shop-filters,.shop-results{min-width:0;width:100%;}
-.grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,225px),1fr));gap:18px;width:100%;min-width:0;}
-.grid-auto>article{min-width:0;max-width:100%;overflow:hidden;}
-@media(min-width:1024px){
-  .shop-layout{grid-template-columns:248px minmax(0,1fr);}
-}
-@media(min-width:1280px){
-  .shop-layout{grid-template-columns:260px minmax(0,1fr);gap:26px;}
-}
-@media(max-width:639px){
-  .grid-auto{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+/* Full-width storefront: no fixed sidebar stealing grid space.
+   Cards fill the entire available catalogue width without overflow. */
+.shop-fullwidth{width:calc(100% - 48px);max-width:none;margin-inline:auto;min-width:0;}
+.shop-layout{display:block;width:100%;min-width:0;}
+.shop-results{width:100%;min-width:0;}
+.shop-filters{width:100%;min-width:0;}
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,225px),1fr));gap:20px;width:100%;min-width:0;}
+.grid-auto>article{width:100%;min-width:0;max-width:100%;overflow:hidden;}
+@media(max-width:640px){
+ .shop-fullwidth{width:calc(100% - 28px);}
+ .shop-fullwidth .grid-auto{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
 }
 @media(max-width:359px){
-  .grid-auto{grid-template-columns:minmax(0,1fr);}
+ .shop-fullwidth .grid-auto{grid-template-columns:minmax(0,1fr);}
 }
